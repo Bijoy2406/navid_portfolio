@@ -1,0 +1,20 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@layer base {
+  body {
+    @apply bg-neutral-50 text-neutral-900;
+  }
+
+  /* Smooth in-page navigation so anchor jumps animate and the
+     position-based blur transitions naturally during the scroll. */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}

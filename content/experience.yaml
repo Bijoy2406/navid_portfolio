@@ -1,0 +1,84 @@
+jobs:
+  - title: UX/UI Designer
+    company: Creative Solutions Agency
+    period: "2021 – Present"
+    description: >
+      At Creative Solutions Agency, I lead design efforts on a range of high-profile
+      projects, focusing on enhancing user experience across multiple platforms, from
+      web to mobile applications. I collaborate closely with developers and stakeholders
+      to ensure that design solutions meet both user needs and business objectives.
+    bullets:
+      - Conducted user research and usability testing to drive design decisions
+      - Created wireframes, prototypes, and high-fidelity visual designs
+      - Developed and maintained design systems for consistent branding and user experience
+      - Worked cross-functionally with product managers and developers to ensure seamless implementation of designs
+      - Led the design of responsive interfaces that adapt to different screen sizes and devices
+      - Managed a small team of junior designers, providing mentorship and feedback
+      - Regularly presented design concepts and iterations to clients and stakeholders
+      - Stayed updated on industry trends to incorporate new design patterns and technologies
+    projects:
+      - title: Pixel Pathway
+        description: A dynamic UX/UI design journey
+        href: "#"
+        # URL or filename in public/assets/
+        image: https://framerusercontent.com/images/MkkkBPjnjBiJYQ7Y8vHigj6I.jpeg
+      - title: Flowstate
+        description: Seamless user experience design
+        href: "#"
+        image: https://framerusercontent.com/images/GuAok0jBiNWN6PM8hPvuqQPBuo.jpeg
+      - title: Nova
+        description: A bold branding and web project
+        href: "#"
+        image: https://framerusercontent.com/images/Afj2AxNgFo0T3qEzIdyZfjnj7o.jpeg
+
+  - title: UX/UI Designer
+    company: Innovative Tech Solutions
+    period: "2018 – 2021"
+    description: >
+      As a UX/UI Designer at Innovative Tech Solutions, I was responsible for designing
+      intuitive, user-centered interfaces for web and mobile applications. My role involved
+      collaborating with clients to understand their needs, conducting user testing, and
+      translating findings into actionable design improvements.
+    bullets:
+      - Led the design process from concept to completion for web and mobile applications
+      - Conducted user interviews and surveys to gather insights for user-centered design
+      - Built wireframes, user flows, and prototypes to visualize design concepts
+      - Coordinated with development teams to ensure design fidelity during implementation
+      - Created high-fidelity UI designs with attention to detail and consistency
+      - Participated in sprint meetings, contributing to product planning and prioritization
+      - Provided feedback on design work produced by junior designers
+      - Developed and maintained design systems for scalability and consistency
+    projects:
+      - title: UX Horizon
+        description: Intuitive and forward-thinking design
+        href: "#"
+        image: https://framerusercontent.com/images/P7UnQ0qsmt55kr2jUL4oO09iis.jpeg
+      - title: ClearView
+        description: Simplifying workflows through design
+        href: "#"
+        image: https://framerusercontent.com/images/zc10Xs9y91cgxBaaVzcHecmn2uQ.jpeg
+
+  - title: Junior UX/UI Designer
+    company: NextGen Digital
+    period: "2016 – 2018"
+    description: >
+      At NextGen Digital, I supported senior designers in delivering design solutions for
+      a variety of digital products. I focused on producing prototypes, wireframes, and
+      visual assets while learning and growing in a fast-paced design environment.
+    bullets:
+      - Assisted in designing wireframes and prototypes for client projects
+      - Supported senior designers with visual design tasks and design documentation
+      - Participated in user research and testing to gather feedback for design improvements
+      - Helped create user personas, journey maps, and other user-centered design artifacts
+      - Produced final assets for handoff to development teams
+      - Ensured design consistency across different platforms and devices
+      - Worked closely with other team members to meet deadlines and deliverables
+    projects:
+      - title: Momentum
+        description: Driving user engagement through bold visuals
+        href: "#"
+        image: https://framerusercontent.com/images/PkBSut5mtqh56AvL2Vs4uYt3M.jpeg
+      - title: FrameWorks
+        description: Shining with a no-code Framer project
+        href: "#"
+        image: https://framerusercontent.com/images/hHC1wBOeEKOvLAdwRlmyUCNVYtw.jpeg

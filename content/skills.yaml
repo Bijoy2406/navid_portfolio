@@ -1,0 +1,27 @@
+skills:
+  - User Research
+  - Wireframing/Prototyping
+  - Interaction Design
+  - Responsive Web Design
+  - Usability Testing
+  - Visual Design
+  - Design Systems
+
+tools:
+  - name: Framer
+    # URL or filename in public/assets/
+    image: https://framerusercontent.com/images/Rku5HaouKwoyKStQckB2ixSX0c4.png
+  - name: Figma
+    image: https://framerusercontent.com/images/pduMSkL486rnVj88RxuGDUTdg.png
+  - name: Photoshop
+    image: https://framerusercontent.com/images/NnxWZUme6ddu2WUcKaB3BVo7hw.png
+  - name: Illustrator
+    image: https://framerusercontent.com/images/YARO8InVyb2eQtVUIq08yzdzVC0.png
+  - name: Sketch
+    image: https://framerusercontent.com/images/OC0fhmyydqIRlmRYbHvyu4obOLM.png
+  - name: Midjourney
+    image: https://framerusercontent.com/images/jS90hiVPvwKI1R3JUPOR14Reh7s.png
+  - name: Spline
+    image: https://framerusercontent.com/images/Z1XnDo3wuWHdaQzUrraDIT2oMM.png
+  - name: Blender
+    image: https://framerusercontent.com/images/Vdxc0sGkEoaVmlv1udoaeQ1PmVA.png

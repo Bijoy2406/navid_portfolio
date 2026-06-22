@@ -1,0 +1,8 @@
+languages:
+  # level is 0–100 (percentage)
+  - name: English
+    level: 100
+  - name: Spanish
+    level: 67
+  - name: French
+    level: 40

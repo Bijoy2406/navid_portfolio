@@ -3,11 +3,12 @@
 import Image from "next/image";
 import { Mail, Phone, MapPin, Linkedin, User, Briefcase, FileText, Zap, Link as LinkIcon, Instagram } from "lucide-react";
 import { MagicBentoGrid } from "@/components/MagicBento";
-import { motion } from "motion/react";
+import { motion, AnimatePresence } from "motion/react";
 import { useState, useEffect, useRef } from "react";
 import type { SiteContent } from "@/lib/content";
 import { resolveImage } from "@/lib/resolve-image";
 import PulsingDot from "@/components/PulsingDot";
+import CinemaLoadingScreen from "@/components/LoadingScreen";
 
 const accent = "text-[#FFB800]";
 const bgAccent = "bg-[#FFB800]";
@@ -212,9 +213,45 @@ function LanguagesSection({ languages, accent }: { languages: { name: string; le
   );
 }
 
+const ROTATING_ROLES = [
+  "Aspiring Product Manager",
+  "Public Relations",
+  "Ambassador",
+  "Freelance Content Creator",
+];
+
+function RotatingText({ texts, rotationInterval = 2500 }: { texts: string[]; rotationInterval?: number }) {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(() => setIndex(i => (i + 1) % texts.length), rotationInterval);
+    return () => clearInterval(id);
+  }, [texts.length, rotationInterval]);
+
+  return (
+    <span className="relative inline-flex overflow-hidden" style={{ verticalAlign: "bottom" }}>
+      <span className="sr-only">{texts[index]}</span>
+      <AnimatePresence mode="wait" initial={false}>
+        <motion.span
+          key={index}
+          aria-hidden
+          initial={{ y: "100%", opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          exit={{ y: "-120%", opacity: 0 }}
+          transition={{ type: "spring", damping: 25, stiffness: 300 }}
+          className="inline-block"
+        >
+          {texts[index]}
+        </motion.span>
+      </AnimatePresence>
+    </span>
+  );
+}
+
 export default function PortfolioClient({ content }: { content: SiteContent }) {
   const { hero, summary, experience, skills, languages, education, links } = content;
 
+  const [loading, setLoading] = useState(true);
   const [isBlurred, setIsBlurred] = useState(false);
   const blurOverlayRef = useRef<HTMLDivElement>(null);
 
@@ -239,21 +276,18 @@ export default function PortfolioClient({ content }: { content: SiteContent }) {
       const triggerLine = window.innerHeight * 0.5;
       const marker2 = document.getElementById("marker-section-2");
       const linksSection = document.getElementById("links");
-      const isMobile = window.innerWidth < 768;
-
-      // Blur ON once Summary's top crosses the 50% viewport line.
+      // Blur ON once past hero (Summary marker crosses 50% viewport).
+      // Blur OFF once Links section enters the viewport.
+      // Same rule on all screen sizes.
       const pastSummary = marker2
         ? marker2.getBoundingClientRect().top <= triggerLine
         : false;
 
-      // Blur OFF once the Links section top is anywhere in the viewport.
       const inLinksSection = linksSection
-        ? linksSection.getBoundingClientRect().top <= window.innerHeight
+        ? linksSection.getBoundingClientRect().top <= triggerLine
         : false;
 
-      const shouldBlur = isMobile
-        ? pastSummary
-        : pastSummary && !inLinksSection;
+      const shouldBlur = pastSummary && !inLinksSection;
 
 
 setIsBlurred(prev => (prev === shouldBlur ? prev : shouldBlur));
@@ -291,7 +325,11 @@ setIsBlurred(prev => (prev === shouldBlur ? prev : shouldBlur));
   const socialBehance = links.socials.behance;
 
   return (
-    <div className="bg-[#050505] text-neutral-300 min-h-screen font-sans selection:bg-[#FFB800]/30 selection:text-white relative overflow-x-hidden">
+    <>
+      <AnimatePresence>
+        {loading && <CinemaLoadingScreen onComplete={() => setLoading(false)} />}
+      </AnimatePresence>
+      <div className="bg-[#050505] text-neutral-300 min-h-screen font-sans selection:bg-[#FFB800]/30 selection:text-white relative overflow-x-hidden">
 
       {/* Background Image layer (fixed to viewport, blurs on scroll) */}
       <div className="fixed inset-0 z-0 pointer-events-none">
@@ -333,13 +371,13 @@ setIsBlurred(prev => (prev === shouldBlur ? prev : shouldBlur));
         <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-[#050505] to-transparent" />
       </div>
 
-      <div className="relative z-10 max-w-[70rem] mx-auto px-5 min-[810px]:px-12 lg:px-8 pb-40 md:pr-48 lg:pr-8">
+      <div className="relative z-10 max-w-[70rem] mx-auto px-5 min-[810px]:px-12 lg:px-8 pb-40 md:pr-48 lg:pr-8 lg:-translate-x-[50px]">
 
         {/* Header */}
         <header className="flex justify-between items-center py-10" id="home">
           <div className="flex items-center gap-3">
             <PulsingDot />
-            <span className="text-white text-[18px] [@media(min-width:1600px)]:text-[20px] font-bold leading-[170%] tracking-wide">Open to work</span>
+            <span className="text-white text-[18px] [@media(min-width:1600px)]:text-[20px] font-bold leading-[170%] tracking-wide">Portfolio</span>
           </div>
           <div className="md:hidden">
             <DownloadCVButton href={cvHref} />
@@ -356,8 +394,8 @@ setIsBlurred(prev => (prev === shouldBlur ? prev : shouldBlur));
             transition={{ duration: 0.7 }}
           >
             {/* Role — Heading 3: 26px default, 30px ≥1600px */}
-            <h2 className={`${accent} text-[26px] [@media(min-width:1600px)]:text-[30px] font-bold tracking-[-0.02em] uppercase leading-[130%] mb-3`}>
-              {hero.title}
+            <h2 className={`${accent} text-[26px] [@media(min-width:1600px)]:text-[30px] font-bold tracking-[-0.02em] uppercase leading-[130%] mb-3 overflow-hidden`}>
+              <RotatingText texts={ROTATING_ROLES} rotationInterval={1800} />
             </h2>
             {/* Name — Heading 1: 64px default, 120px ≥1600px */}
             <h1 className="text-[64px] [@media(min-width:1600px)]:text-[120px] leading-[90%] font-bold tracking-[-0.04em] text-white mb-20 drop-shadow-md">
@@ -659,5 +697,6 @@ setIsBlurred(prev => (prev === shouldBlur ? prev : shouldBlur));
         })}
       </nav>
     </div>
+    </>
   );
 }

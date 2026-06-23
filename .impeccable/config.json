@@ -1,0 +1,10 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [
+      "LoadingScreen (1).tsx",
+      "components/LoadingScreen.tsx"
+    ],
+    "ignoreValues": []
+  }
+}

@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { motion } from 'motion/react'
+import { motion, AnimatePresence } from 'motion/react'
 
 interface LoadingScreenProps {
   onComplete: () => void
@@ -77,7 +77,6 @@ export default function CinemaLoadingScreen({ onComplete }: LoadingScreenProps) 
   const [progress, setProgress]       = useState(0)
   const [currentWord, setCurrentWord] = useState(WORDS[0])
   const [irisOpen, setIrisOpen]       = useState(true)
-  const [flash, setFlash]             = useState(false)
   const [mounted, setMounted]         = useState(false)
 
   useEffect(() => {
@@ -88,13 +87,10 @@ export default function CinemaLoadingScreen({ onComplete }: LoadingScreenProps) 
   useEffect(() => {
     if (!mounted) return
     let idx = 0
-    let t1: ReturnType<typeof setTimeout>
     let t2: ReturnType<typeof setTimeout>
 
     const interval = setInterval(() => {
-      setFlash(true)
       setIrisOpen(false)
-      t1 = setTimeout(() => setFlash(false), 90)
       t2 = setTimeout(() => {
         idx = (idx + 1) % WORDS.length
         setCurrentWord(WORDS[idx])
@@ -104,7 +100,6 @@ export default function CinemaLoadingScreen({ onComplete }: LoadingScreenProps) 
 
     return () => {
       clearInterval(interval)
-      clearTimeout(t1)
       clearTimeout(t2)
     }
   }, [mounted])
@@ -137,10 +132,6 @@ export default function CinemaLoadingScreen({ onComplete }: LoadingScreenProps) 
 
   const padded = String(progress).padStart(3, '0')
   const frameCount = String(Math.floor(progress / 4)).padStart(3, '0')
-
-  const irisClip = irisOpen
-    ? 'circle(60% at 50% 50%)'
-    : 'circle(0% at 50% 50%)'
 
   return (
     <motion.div
@@ -197,14 +188,7 @@ export default function CinemaLoadingScreen({ onComplete }: LoadingScreenProps) 
         }}
       />
 
-      {/* Shutter flash overlay */}
-      <div
-        className="absolute inset-0 z-50 pointer-events-none bg-white"
-        style={{
-          opacity: flash ? 0.14 : 0,
-          transition: flash ? 'none' : 'opacity 0.1s ease'
-        }}
-      />
+
 
       {/* Rotating network decoration */}
       <NetworkDecoration />
@@ -261,23 +245,38 @@ Tamzidur Rahman Navid
         style={{
           width: 'min(82vw, 680px)',
           padding: '64px 40px',
-          clipPath: irisClip,
-          transition: 'clip-path 0.28s cubic-bezier(0.4, 0, 0.2, 1)'
         }}
       >
-        <span
-          style={{
-            fontFamily: 'DM Serif Display, Georgia, serif',
-            fontStyle: 'italic',
-            fontSize: 'clamp(52px, 10vw, 112px)',
-            color: 'rgba(255,255,255,0.82)',
-            letterSpacing: '0.03em',
-            lineHeight: 1.1,
-            display: 'block'
-          }}
-        >
-          {currentWord}
-        </span>
+        <div className="relative overflow-hidden">
+          <AnimatePresence mode="wait" initial={false}>
+            {irisOpen && (
+              <motion.span
+                key={currentWord}
+                initial={{ opacity: 0, y: 28, scale: 0.96, filter: 'blur(10px)' }}
+                animate={{ opacity: 1, y: 0, scale: 1, filter: 'blur(0px)' }}
+                exit={{ opacity: 0, y: -20, scale: 1.02, filter: 'blur(8px)' }}
+                transition={{
+                  opacity: { duration: 0.28, ease: 'easeOut' },
+                  y: { duration: 0.5, ease: [0.22, 1, 0.36, 1] },
+                  scale: { duration: 0.5, ease: [0.22, 1, 0.36, 1] },
+                  filter: { duration: 0.3, ease: 'easeOut' }
+                }}
+                style={{
+                  fontFamily: 'DM Serif Display, Georgia, serif',
+                  fontStyle: 'italic',
+                  fontSize: 'clamp(52px, 10vw, 112px)',
+                  color: 'rgba(255,255,255,0.82)',
+                  letterSpacing: '0.03em',
+                  lineHeight: 1.1,
+                  display: 'block',
+                  textShadow: '0 0 24px rgba(255,184,0,0.08)'
+                }}
+              >
+                {currentWord}
+              </motion.span>
+            )}
+          </AnimatePresence>
+        </div>
       </div>
 
       {/* Counter — bottom right */}
@@ -314,7 +313,7 @@ Tamzidur Rahman Navid
       <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-[#FFB800]/[0.12] z-10">
         <div
           className="h-full bg-[#FFB800]"
-          style={{ width: `${progress}%`, transition: 'width 0.05s linear' }}
+          style={{ width: `${progress}%`, transition: 'width 0.16s cubic-bezier(0.22, 1, 0.36, 1)' }}
         />
       </div>
     </motion.div>

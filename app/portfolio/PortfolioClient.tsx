@@ -9,6 +9,7 @@ import type { SiteContent } from "@/lib/content";
 import { resolveImage } from "@/lib/resolve-image";
 import PulsingDot from "@/components/PulsingDot";
 import CinemaLoadingScreen from "@/components/LoadingScreen";
+import { BlurReveal } from "@/components/BlurReveal";
 
 const accent = "text-[#FFB800]";
 const bgAccent = "bg-[#FFB800]";
@@ -229,17 +230,25 @@ function RotatingText({ texts, rotationInterval = 2500 }: { texts: string[]; rot
   }, [texts.length, rotationInterval]);
 
   return (
-    <span className="relative inline-flex overflow-hidden" style={{ verticalAlign: "bottom" }}>
+    <span
+      className="relative inline-grid overflow-hidden whitespace-nowrap"
+      style={{ verticalAlign: "bottom", gridTemplateAreas: '"stack"' }}
+    >
       <span className="sr-only">{texts[index]}</span>
       <AnimatePresence mode="wait" initial={false}>
         <motion.span
           key={index}
-          aria-hidden
-          initial={{ y: "100%", opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          exit={{ y: "-120%", opacity: 0 }}
-          transition={{ type: "spring", damping: 25, stiffness: 300 }}
-          className="inline-block"
+          aria-hidden={true}
+          initial={{ y: "65%", opacity: 0, filter: "blur(8px)" }}
+          animate={{ y: "0%", opacity: 1, filter: "blur(0px)" }}
+          exit={{ y: "-65%", opacity: 0, filter: "blur(6px)" }}
+          transition={{
+            y: { duration: 0.62, ease: [0.22, 1, 0.36, 1] },
+            opacity: { duration: 0.38, ease: "easeOut" },
+            filter: { duration: 0.4, ease: "easeOut" },
+          }}
+          className="inline-block will-change-transform whitespace-nowrap"
+          style={{ gridArea: "stack" }}
         >
           {texts[index]}
         </motion.span>
@@ -387,35 +396,35 @@ setIsBlurred(prev => (prev === shouldBlur ? prev : shouldBlur));
         {/* Hero */}
         <section className="pb-24 md:pt-40 md:pb-40 flex flex-col md:justify-center min-h-screen">
           {/* On mobile: push role/name to ~50vh so photo shows above */}
-          <div className="mt-[38vh] md:mt-0">
+          <div className="mt-[20vh] md:mt-0">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
           >
             {/* Role — Heading 3: 26px default, 30px ≥1600px */}
-            <h2 className={`${accent} text-[26px] [@media(min-width:1600px)]:text-[30px] font-bold tracking-[-0.02em] uppercase leading-[130%] mb-3 overflow-hidden`}>
+            <h2 className={`${accent} text-[16px] min-[360px]:text-[18px] min-[400px]:text-[22px] md:text-[26px] [@media(min-width:1600px)]:text-[30px] font-bold tracking-[-0.02em] uppercase leading-[130%] mb-3 overflow-hidden whitespace-nowrap`}>
               <RotatingText texts={ROTATING_ROLES} rotationInterval={1800} />
             </h2>
-            {/* Name — Heading 1: 64px default, 120px ≥1600px */}
-            <h1 className="text-[64px] [@media(min-width:1600px)]:text-[120px] leading-[90%] font-bold tracking-[-0.04em] text-white mb-20 drop-shadow-md">
+            {/* Name — scales from 36px on small phones up to 120px on wide screens */}
+            <h1 className="text-[36px] min-[360px]:text-[70px] min-[400px]:text-[56px] md:text-[64px] [@media(min-width:1600px)]:text-[120px] leading-[90%] font-bold tracking-[-0.04em] text-white mb-8 md:mb-20 drop-shadow-md">
               {hero.name}
             </h1>
 
             {/* Contacts — Body L: 18px default, 20px ≥1600px */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-12 max-w-[40rem] font-bold">
-              <div className="flex items-center gap-4 text-white text-[18px] [@media(min-width:1600px)]:text-[20px] leading-[170%]">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-5 md:gap-y-4 gap-x-12 max-w-[40rem] font-bold mt-55 md:mt-0">
+              <a href={`mailto:${hero.email}`} className="flex items-center gap-4 text-white text-[18px] [@media(min-width:1600px)]:text-[20px] leading-[170%] hover:text-[#FFB800] transition-colors">
                 <Mail className={`w-6 h-6 ${accent}`} strokeWidth={1.5} />
                 <span>{hero.email}</span>
-              </div>
-              <div className="flex items-center gap-4 text-white text-[18px] [@media(min-width:1600px)]:text-[20px] leading-[170%]">
+              </a>
+              <a href={`tel:${hero.phone}`} className="flex items-center gap-4 text-white text-[18px] [@media(min-width:1600px)]:text-[20px] leading-[170%] hover:text-[#FFB800] transition-colors">
                 <Phone className={`w-6 h-6 ${accent}`} strokeWidth={1.5} />
                 <span>{hero.phone}</span>
-              </div>
-              <div className="flex items-center gap-4 text-white text-[18px] [@media(min-width:1600px)]:text-[20px] leading-[170%]">
+              </a>
+              <a href={hero.linkedin.startsWith("http") ? hero.linkedin : `https://${hero.linkedin}`} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-white text-[18px] [@media(min-width:1600px)]:text-[20px] leading-[170%] hover:text-[#FFB800] transition-colors">
                 <Linkedin className={`w-6 h-6 ${accent}`} strokeWidth={1.5} />
                 <span>{hero.linkedin}</span>
-              </div>
+              </a>
               <div className="flex items-center gap-4 text-white text-[18px] [@media(min-width:1600px)]:text-[20px] leading-[170%]">
                 <MapPin className={`w-6 h-6 ${accent}`} strokeWidth={1.5} />
                 <span>{hero.location}</span>
@@ -440,8 +449,12 @@ setIsBlurred(prev => (prev === shouldBlur ? prev : shouldBlur));
 
           {/* Body: 16px/400w default, 18px ≥1600px */}
           <div className="max-w-[44rem] space-y-8 text-white leading-[170%] text-[16px] [@media(min-width:1600px)]:text-[18px] font-normal lg:text-left">
-            {summary.paragraphs[0] && <p>{summary.paragraphs[0]}</p>}
-            {summary.paragraphs[1] && <p className="text-white">{summary.paragraphs[1]}</p>}
+            {summary.paragraphs[0] && (
+              <BlurReveal delay={0}>{summary.paragraphs[0]}</BlurReveal>
+            )}
+            {summary.paragraphs[1] && (
+              <BlurReveal delay={0} className="text-white">{summary.paragraphs[1]}</BlurReveal>
+            )}
 
             {/* Quote: 32px desktop, 26px tablet/mobile, 36px ≥1600px */}
             <motion.blockquote
@@ -450,11 +463,11 @@ setIsBlurred(prev => (prev === shouldBlur ? prev : shouldBlur));
               viewport={{ once: true }}
               className={`border-l-[4px] border-[#FFB800] pl-6 md:pl-8 py-2 mt-20 text-[26px] md:text-[32px] [@media(min-width:1600px)]:text-[36px] font-bold text-white leading-[130%] tracking-[-0.02em] max-w-[42rem]`}
             >
-              {summary.blockquote}
+              <BlurReveal as="span" delay={0.1} stagger={0.04}>{summary.blockquote}</BlurReveal>
             </motion.blockquote>
 
             {summary.paragraphs[2] && (
-              <p className="mt-8 text-white leading-[170%] text-[16px] [@media(min-width:1600px)]:text-[18px] font-normal lg:text-left">{summary.paragraphs[2]}</p>
+              <BlurReveal delay={0} className="mt-8 text-white leading-[170%] text-[16px] [@media(min-width:1600px)]:text-[18px] font-normal lg:text-left">{summary.paragraphs[2]}</BlurReveal>
             )}
           </div>
         </section>
@@ -514,9 +527,9 @@ setIsBlurred(prev => (prev === shouldBlur ? prev : shouldBlur));
                     </div>
                     <div className="mb-8 text-[18px] [@media(min-width:1600px)]:text-[20px] font-bold leading-[170%] text-white">{job.company}</div>
 
-                    <p className="text-white leading-[170%] text-[16px] [@media(min-width:1600px)]:text-[18px] font-normal mb-10 max-w-3xl lg:text-left">
+                    <BlurReveal delay={0} className="text-white leading-[170%] text-[16px] [@media(min-width:1600px)]:text-[18px] font-normal mb-10 max-w-3xl lg:text-left">
                       {job.description}
-                    </p>
+                    </BlurReveal>
 
                     <div className="mb-12">
                       <h4 className={`${accent} text-sm font-semibold mb-6 uppercase tracking-widest`}>Selected Projects</h4>
@@ -527,7 +540,7 @@ setIsBlurred(prev => (prev === shouldBlur ? prev : shouldBlur));
                       {job.bullets.map((item, i) => (
                         <li key={i} className="flex gap-4 items-start text-white text-[16px] [@media(min-width:1600px)]:text-[18px] font-normal leading-[170%]">
                           <span className={`${accent} mt-[2px] shrink-0`}>—</span>
-                          <span className="lg:text-left">{item}</span>
+                          <BlurReveal as="span" delay={i * 0.06} stagger={0.03} className="lg:text-left">{item}</BlurReveal>
                         </li>
                       ))}
                     </ul>
@@ -552,8 +565,8 @@ setIsBlurred(prev => (prev === shouldBlur ? prev : shouldBlur));
           <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-6 gap-x-12 mb-20 max-w-3xl ml-2">
             {skills.skills.map((skill, idx) => (
               <li key={idx} className="flex items-center gap-4 text-white text-[16px] [@media(min-width:1600px)]:text-[18px] font-normal leading-[170%]">
-                <div className={`w-2 h-2 rounded-full ${bgAccent} opacity-80`} />
-                <span>{skill}</span>
+                <div className={`w-2 h-2 rounded-full ${bgAccent} opacity-80 shrink-0`} />
+                <BlurReveal as="span" delay={idx * 0.07} stagger={0.04}>{skill}</BlurReveal>
               </li>
             ))}
           </ul>
@@ -589,8 +602,8 @@ setIsBlurred(prev => (prev === shouldBlur ? prev : shouldBlur));
               <div key={`edu-${idx}`} className="flex gap-6">
                 <div className={`w-2.5 h-2.5 mt-2 rounded-full ${bgAccent} shrink-0`} />
                 <div>
-                  <h3 className="text-xl font-bold text-white mb-2">{edu.institution}</h3>
-                  <p className={`${accent} font-medium`}>{edu.degree} — {edu.year}</p>
+                  <BlurReveal as="h3" delay={idx * 0.08} className="text-xl font-bold text-white mb-2">{edu.institution}</BlurReveal>
+                  <BlurReveal as="p" delay={idx * 0.08 + 0.05} className={`${accent} font-medium`}>{`${edu.degree} — ${edu.year}`}</BlurReveal>
                 </div>
               </div>
             ))}
@@ -598,8 +611,8 @@ setIsBlurred(prev => (prev === shouldBlur ? prev : shouldBlur));
               <div key={`cert-${idx}`} className="flex gap-6">
                 <div className={`w-2.5 h-2.5 mt-2 rounded-full ${bgAccent} shrink-0`} />
                 <div>
-                  <h3 className="text-xl font-bold text-white mb-2">{cert.name}</h3>
-                  <p className={`${accent} font-medium`}>{cert.date}</p>
+                  <BlurReveal as="h3" delay={idx * 0.08} className="text-xl font-bold text-white mb-2">{cert.name}</BlurReveal>
+                  <BlurReveal as="p" delay={idx * 0.08 + 0.05} className={`${accent} font-medium`}>{cert.date}</BlurReveal>
                 </div>
               </div>
             ))}

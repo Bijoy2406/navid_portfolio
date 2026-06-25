@@ -214,6 +214,81 @@ function LanguagesSection({ languages, accent }: { languages: { name: string; le
   );
 }
 
+function AuroraGlow() {
+  return (
+    <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
+      <style dangerouslySetInnerHTML={{ __html: `
+        @keyframes aurora_drift_1 {
+          0%   { transform: translate(0%, 0%) scale(1); }
+          33%  { transform: translate(8%, -6%) scale(1.18); }
+          66%  { transform: translate(-6%, 5%) scale(0.9); }
+          100% { transform: translate(0%, 0%) scale(1); }
+        }
+        @keyframes aurora_drift_2 {
+          0%   { transform: translate(0%, 0%) scale(1); }
+          33%  { transform: translate(-7%, 6%) scale(1.1); }
+          66%  { transform: translate(6%, -5%) scale(0.85); }
+          100% { transform: translate(0%, 0%) scale(1); }
+        }
+        @keyframes aurora_drift_3 {
+          0%   { transform: translate(0%, 0%) scale(1); }
+          50%  { transform: translate(5%, 4%) scale(1.22); }
+          100% { transform: translate(0%, 0%) scale(1); }
+        }
+      `}} />
+      <div
+        className="absolute -top-[12%] left-[10%] h-[55vh] w-[55vh] rounded-full blur-3xl will-change-transform"
+        style={{ background: 'radial-gradient(circle, rgba(255,184,0,0.18) 0%, rgba(255,184,0,0) 70%)', animation: 'aurora_drift_1 20s ease-in-out infinite' }}
+      />
+      <div
+        className="absolute top-[30%] left-[40%] h-[50vh] w-[50vh] rounded-full blur-3xl will-change-transform"
+        style={{ background: 'radial-gradient(circle, rgba(255,184,0,0.12) 0%, rgba(255,184,0,0) 70%)', animation: 'aurora_drift_2 24s ease-in-out infinite' }}
+      />
+      <div
+        className="absolute top-[5%] right-[8%] h-[40vh] w-[40vh] rounded-full blur-3xl will-change-transform"
+        style={{ background: 'radial-gradient(circle, rgba(255,184,0,0.10) 0%, rgba(255,184,0,0) 70%)', animation: 'aurora_drift_3 18s ease-in-out infinite' }}
+      />
+    </div>
+  );
+}
+
+function BlurRevealName({ text, className, start }: { text: string; className?: string; start: boolean }) {
+  const container = {
+    hidden: {},
+    show: { transition: { staggerChildren: 0.04, delayChildren: 0.15 } },
+  };
+  const letter = {
+    hidden: { y: 24, opacity: 0, filter: "blur(12px)" },
+    show: {
+      y: 0,
+      opacity: 1,
+      filter: "blur(0px)",
+      transition: { type: "spring" as const, stiffness: 120, damping: 16 },
+    },
+  };
+
+  return (
+    <motion.h1
+      variants={container}
+      initial="hidden"
+      animate={start ? "show" : "hidden"}
+      aria-label={text}
+      className={className}
+    >
+      {text.split("").map((char, i) => (
+        <motion.span
+          key={i}
+          variants={letter}
+          aria-hidden="true"
+          className="inline-block will-change-transform"
+        >
+          {char === " " ? " " : char}
+        </motion.span>
+      ))}
+    </motion.h1>
+  );
+}
+
 const ROTATING_ROLES = [
   "Aspiring Product Manager",
   "Public Relations",
@@ -358,6 +433,9 @@ setIsBlurred(prev => (prev === shouldBlur ? prev : shouldBlur));
           />
         </motion.div>
 
+        {/* Aurora gold glow — drifts behind hero, above image, below blur/shadows */}
+        <AuroraGlow />
+
         {/* Animated Blur Overlay — transitions on #summary enter / #links enter */}
         <div
           ref={blurOverlayRef}
@@ -407,9 +485,11 @@ setIsBlurred(prev => (prev === shouldBlur ? prev : shouldBlur));
               <RotatingText texts={ROTATING_ROLES} rotationInterval={1800} />
             </h2>
             {/* Name — scales from 36px on small phones up to 120px on wide screens */}
-            <h1 className="text-[36px] min-[360px]:text-[70px] min-[400px]:text-[56px] md:text-[64px] [@media(min-width:1600px)]:text-[120px] leading-[90%] font-bold tracking-[-0.04em] text-white mb-8 md:mb-20 drop-shadow-md">
-              {hero.name}
-            </h1>
+            <BlurRevealName
+              text={hero.name}
+              start={!loading}
+              className="text-[36px] min-[360px]:text-[70px] min-[400px]:text-[56px] md:text-[64px] [@media(min-width:1600px)]:text-[120px] leading-[90%] font-bold tracking-[-0.04em] text-white mb-8 md:mb-20 drop-shadow-md"
+            />
 
             {/* Contacts — Body L: 18px default, 20px ≥1600px */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-5 md:gap-y-4 gap-x-12 max-w-[40rem] font-bold mt-55 md:mt-0">

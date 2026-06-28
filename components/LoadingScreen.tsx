@@ -106,7 +106,7 @@ export default function CinemaLoadingScreen({ onComplete }: LoadingScreenProps) 
 
   useEffect(() => {
     if (!mounted) return
-    const duration = 2000
+    const duration = 5500
     const start = performance.now()
     let animId: number
 

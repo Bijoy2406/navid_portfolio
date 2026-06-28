@@ -452,7 +452,7 @@ export default function PortfolioClient({ content }: { content: SiteContent }) {
     const minimumTimer = window.setTimeout(() => {
       minimumLoaderTimeElapsedRef.current = true;
       finishLoaderIfReady();
-    }, 2000);
+    }, 5500);
 
     const markWindowLoaded = () => {
       windowLoadedRef.current = true;

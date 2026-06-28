@@ -17,4 +17,10 @@
       scroll-behavior: auto;
     }
   }
+
+  @media (pointer: fine) {
+    a, button {
+      cursor: none !important;
+    }
+  }
 }

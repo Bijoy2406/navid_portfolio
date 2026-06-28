@@ -106,7 +106,7 @@ export default function CinemaLoadingScreen({ onComplete }: LoadingScreenProps) 
 
   useEffect(() => {
     if (!mounted) return
-    const duration = 4000
+    const duration = 2000
     const start = performance.now()
     let animId: number
 
@@ -120,7 +120,7 @@ export default function CinemaLoadingScreen({ onComplete }: LoadingScreenProps) 
         animId = requestAnimationFrame(step)
       } else {
         setProgress(100)
-        setTimeout(() => onComplete(), 500)
+        onComplete()
       }
     }
 
@@ -135,6 +135,7 @@ export default function CinemaLoadingScreen({ onComplete }: LoadingScreenProps) 
 
   return (
     <motion.div
+      data-loader="portfolio"
       initial={{ opacity: 1 }}
       exit={{ opacity: 0, transition: { duration: 0.5, ease: 'easeOut' } }}
       className="fixed inset-0 bg-[#050505] z-[100] overflow-hidden select-none"

@@ -3,7 +3,8 @@
     "ignoreRules": [],
     "ignoreFiles": [
       "LoadingScreen (1).tsx",
-      "components/LoadingScreen.tsx"
+      "components/LoadingScreen.tsx",
+      "app/portfolio/portfolio.css"
     ],
     "ignoreValues": []
   }

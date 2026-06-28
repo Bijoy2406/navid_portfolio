@@ -1,8 +1,8 @@
 languages:
   # level is 0–100 (percentage)
-  - name: English
+  - name: Bangla
     level: 100
-  - name: Spanish
-    level: 67
-  - name: French
-    level: 40
+  - name: English
+    level: 90
+  - name: Hindi
+    level: 50

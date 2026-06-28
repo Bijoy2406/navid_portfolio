@@ -1,0 +1,754 @@
+/* ============================================================
+   PORTFOLIO PAGE STYLES (plain CSS — no Tailwind)
+   All styling for app/portfolio/PortfolioClient.tsx lives here.
+   Animations (fade/slide) stay in the JSX via Framer Motion.
+
+   Breakpoints used (min-width):
+     640px  = tablet (was Tailwind `sm:`)
+     768px  = small desktop (was `md:`)
+     810px  = wide tablet (was `min-[810px]:`)
+     1024px = desktop (was `lg:`)
+     1280px = large desktop (was `xl:`)
+     1600px = extra-large (was `[@media(min-width:1600px)]:`)
+   ============================================================ */
+
+/* ---- Root container ---------------------------------------- */
+.portfolio {
+  --accent: #FFB800;            /* gold accent used across the page */
+  background: #050505;
+  color: #d4d4d4;               /* neutral-300 base text */
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  cursor: default;
+}
+.portfolio ::selection {
+  background: rgba(255, 184, 0, 0.3);
+  color: #fff;
+}
+
+/* ---- Background image + overlays --------------------------- */
+.bg-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+.bg-image-wrap {
+  position: absolute;
+  inset: 0;
+}
+.bg-image {
+  object-fit: cover;
+  object-position: 48% 31%;
+}
+@media (min-width: 768px) {
+  .bg-image { object-position: 38% 31%; }
+}
+
+/* Animated blur overlay — dynamic blur/bg stay inline in JSX */
+.blur-overlay {
+  position: absolute;
+  inset: 0;
+}
+
+/* Left fade so text stays readable over the photo */
+.fade-left-mobile {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, #050505, rgba(5, 5, 5, 0.6), transparent);
+}
+@media (min-width: 768px) {
+  .fade-left-mobile { display: none; }
+}
+.fade-left-desktop {
+  display: none;
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, #050505, rgba(5, 5, 5, 0.3), transparent);
+}
+@media (min-width: 768px) {
+  .fade-left-desktop { display: block; }
+}
+.fade-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50vh;
+  background: linear-gradient(to top, #050505, rgba(5, 5, 5, 0.7), transparent);
+}
+.fade-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 8rem;
+  background: linear-gradient(to bottom, #050505, transparent);
+}
+
+/* ---- Aurora gold glow -------------------------------------- */
+.aurora {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.aurora-blob {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(64px);
+  will-change: transform;
+}
+.aurora-blob-1 {
+  top: -12%;
+  left: 10%;
+  height: 55vh;
+  width: 55vh;
+  background: radial-gradient(circle, rgba(255, 184, 0, 0.18) 0%, rgba(255, 184, 0, 0) 70%);
+  animation: aurora_drift_1 20s ease-in-out infinite;
+}
+.aurora-blob-2 {
+  top: 30%;
+  left: 40%;
+  height: 50vh;
+  width: 50vh;
+  background: radial-gradient(circle, rgba(255, 184, 0, 0.12) 0%, rgba(255, 184, 0, 0) 70%);
+  animation: aurora_drift_2 24s ease-in-out infinite;
+}
+.aurora-blob-3 {
+  top: 5%;
+  right: 8%;
+  height: 40vh;
+  width: 40vh;
+  background: radial-gradient(circle, rgba(255, 184, 0, 0.10) 0%, rgba(255, 184, 0, 0) 70%);
+  animation: aurora_drift_3 18s ease-in-out infinite;
+}
+@keyframes aurora_drift_1 {
+  0%   { transform: translate(0%, 0%) scale(1); }
+  33%  { transform: translate(8%, -6%) scale(1.18); }
+  66%  { transform: translate(-6%, 5%) scale(0.9); }
+  100% { transform: translate(0%, 0%) scale(1); }
+}
+@keyframes aurora_drift_2 {
+  0%   { transform: translate(0%, 0%) scale(1); }
+  33%  { transform: translate(-7%, 6%) scale(1.1); }
+  66%  { transform: translate(6%, -5%) scale(0.85); }
+  100% { transform: translate(0%, 0%) scale(1); }
+}
+@keyframes aurora_drift_3 {
+  0%   { transform: translate(0%, 0%) scale(1); }
+  50%  { transform: translate(5%, 4%) scale(1.22); }
+  100% { transform: translate(0%, 0%) scale(1); }
+}
+
+/* ---- Page content wrapper ---------------------------------- */
+.content {
+  position: relative;
+  z-index: 10;
+  max-width: 70rem;
+  margin: 0 auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  padding-bottom: 10rem;
+}
+@media (min-width: 768px) {
+  .content { padding-right: 12rem; }   /* room for portrait/sticky CV */
+}
+@media (min-width: 810px) {
+  .content { padding-left: 3rem; padding-right: 3rem; }
+}
+@media (min-width: 1024px) {
+  .content {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    transform: translateX(-50px);
+  }
+}
+
+/* ---- Header ------------------------------------------------ */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2.5rem 0;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.brand-name {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 170%;
+  letter-spacing: 0.025em;
+}
+@media (min-width: 1600px) {
+  .brand-name { font-size: 20px; }
+}
+/* Download CV button shown in header on mobile only */
+@media (min-width: 768px) {
+  .cv-mobile { display: none; }
+}
+
+/* ---- Hero -------------------------------------------------- */
+.hero {
+  padding-bottom: 6rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 128vh;
+}
+@media (min-width: 768px) {
+  .hero {
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+    justify-content: center;
+    min-height: 100vh;
+  }
+}
+/* On mobile push role/name down so the photo shows above */
+.hero-inner {
+  margin-top: 35vh;
+}
+@media (min-width: 768px) {
+  .hero-inner { margin-top: 0; }
+}
+.hero-role {
+  color: var(--accent);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  line-height: 130%;
+  margin-bottom: clamp(0.5rem, 1.5vw, 0.75rem);
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: clamp(16px, 4.2vw, 30px);
+}
+
+/* Hero name (rendered letter-by-letter by BlurRevealName) */
+.hero-name {
+  max-width: 36rem;
+  font-size: 36px;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  color: #fff;
+  filter: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));
+  margin-bottom: clamp(1.5rem, 5vw, 5rem);
+}
+@media (min-width: 360px)  { .hero-name { font-size: 70px; } }
+@media (min-width: 400px)  { .hero-name { font-size: 70px; } }
+@media (min-width: 768px)  { .hero-name { font-size: 50px; max-width: 42rem; } }
+@media (min-width: 1024px) { .hero-name { font-size: 64px; max-width: 48rem; white-space: nowrap; } }
+@media (min-width: 1280px) { .hero-name { max-width: 56rem; } }
+@media (min-width: 1600px) { .hero-name { font-size: 80px; } }
+
+/* Word wrapping units inside the hero name */
+.hero-name-word {
+  display: inline;
+  white-space: nowrap;
+}
+.hero-name-word--last {
+  display: inline;
+  white-space: nowrap;
+}
+.hero-name-letter {
+  display: inline-block;
+  will-change: transform;
+}
+.hero-name-space {
+  display: inline-block;
+  white-space: pre;
+  will-change: transform;
+}
+
+/* ---- Rotating role text ------------------------------------ */
+.rotating {
+  position: relative;
+  display: inline-grid;
+  overflow: hidden;
+  white-space: nowrap;
+  vertical-align: bottom;
+  grid-template-areas: "stack";
+}
+.rotating-item {
+  display: inline-block;
+  will-change: transform;
+  white-space: nowrap;
+  grid-area: stack;
+}
+
+/* ---- Generic section + titles ------------------------------ */
+.section {
+  position: relative;
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+}
+@media (min-width: 768px) {
+  .section { padding-top: 13rem; padding-bottom: 13rem; }
+}
+.section--about { font-weight: 500; }
+
+.section-title {
+  font-size: 48px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 100%;
+  text-transform: capitalize;
+  color: var(--accent);
+  margin-bottom: 3rem;       /* default */
+}
+@media (min-width: 1600px) {
+  .section-title { font-size: 56px; }
+}
+/* small-title variant (Languages, Education) */
+.section-title--sm {
+  font-size: 26px;
+  line-height: 130%;
+  text-transform: uppercase;
+}
+@media (min-width: 1600px) {
+  .section-title--sm { font-size: 30px; }
+}
+/* margin-bottom variants */
+.section-title.space-md { margin-bottom: 4rem; }  /* Skills */
+.section-title.space-lg { margin-bottom: 5rem; }  /* Experience */
+
+/* ---- About Me ---------------------------------------------- */
+.about-body {
+  max-width: 44rem;
+  color: #fff;
+  line-height: 170%;
+  font-size: 16px;
+  font-weight: 400;
+}
+@media (min-width: 1600px) { .about-body { font-size: 18px; } }
+@media (min-width: 1024px) { .about-body { text-align: left; } }
+/* gap between paragraphs (low specificity so explicit margins win) */
+:where(.about-body > * + *) { margin-top: 2rem; }
+
+.about-quote {
+  border-left: 4px solid var(--accent);
+  padding-left: 1.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  margin-top: 5rem;
+  font-size: 26px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 130%;
+  letter-spacing: -0.02em;
+  max-width: 42rem;
+}
+@media (min-width: 768px)  { .about-quote { padding-left: 2rem; font-size: 32px; } }
+@media (min-width: 1600px) { .about-quote { font-size: 36px; } }
+
+/* ---- Work Experience --------------------------------------- */
+.job-head {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+@media (min-width: 640px) {
+  .job-head { flex-direction: row; align-items: center; }
+}
+.job-title {
+  font-size: 26px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 130%;
+  color: var(--accent);
+}
+@media (min-width: 1600px) { .job-title { font-size: 30px; } }
+.job-period {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 170%;
+  color: var(--accent);
+}
+@media (min-width: 1600px) { .job-period { font-size: 18px; } }
+.job-company {
+  margin-bottom: 2rem;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 170%;
+  color: #fff;
+}
+@media (min-width: 1600px) { .job-company { font-size: 20px; } }
+.job-desc {
+  color: #fff;
+  line-height: 170%;
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 2.5rem;
+  max-width: 48rem;
+}
+@media (min-width: 1600px) { .job-desc { font-size: 18px; } }
+@media (min-width: 1024px) { .job-desc { text-align: left; } }
+.job-projects { margin-bottom: 3rem; }
+.job-projects-label {
+  color: var(--accent);
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.job-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+:where(.job-bullets > * + *) { margin-top: 1rem; }
+.job-bullet {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 170%;
+}
+@media (min-width: 1600px) { .job-bullet { font-size: 18px; } }
+.job-bullet-dash {
+  color: var(--accent);
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+/* ---- Skills & Tools ---------------------------------------- */
+.skills-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 5rem 0.5rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 1.5rem;
+  column-gap: 3rem;
+  max-width: 48rem;
+}
+@media (min-width: 640px) {
+  .skills-list { grid-template-columns: 1fr 1fr; }
+}
+.skill-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 170%;
+}
+@media (min-width: 1600px) { .skill-item { font-size: 18px; } }
+.skill-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 9999px;
+  background: var(--accent);
+  opacity: 0.8;
+  flex-shrink: 0;
+}
+.tools-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 3rem;
+  column-gap: 2rem;
+}
+@media (min-width: 640px) { .tools-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 768px) { .tools-grid { grid-template-columns: repeat(4, 1fr); } }
+.tool-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+}
+.tool-icon {
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.tool-img {
+  object-fit: contain;
+  height: auto;
+  max-height: 4rem;
+}
+.tool-name {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #fff;
+  transition: color 0.2s;
+}
+
+/* ---- Languages (bars use inline styles in JSX) ------------- */
+
+/* ---- Education --------------------------------------------- */
+:where(.edu-list > * + *) { margin-top: 3rem; }
+.edu-item {
+  display: flex;
+  gap: 1.5rem;
+}
+.edu-dot {
+  width: 0.625rem;
+  height: 0.625rem;
+  margin-top: 0.5rem;
+  border-radius: 9999px;
+  background: var(--accent);
+  flex-shrink: 0;
+}
+.edu-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+.edu-meta {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+/* ---- Achievements ------------------------------------------ */
+.ach-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-width: 48rem;
+}
+:where(.ach-list > * + *) { margin-top: 1.5rem; }
+.ach-item {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 170%;
+}
+@media (min-width: 1600px) { .ach-item { font-size: 18px; } }
+.ach-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  margin-top: 10px;
+  border-radius: 9999px;
+  background: var(--accent);
+  opacity: 0.8;
+  flex-shrink: 0;
+}
+
+/* ---- Links / socials --------------------------------------- */
+.social-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 4rem;
+}
+.social-link { position: relative; }
+.social-btn {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s;
+}
+.social-btn:hover { opacity: 0.8; }
+.social-icon {
+  width: 1.75rem;
+  height: 1.75rem;
+  color: #fff;
+}
+.social-be {
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: -0.05em;
+}
+.social-tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 0.5rem;
+  padding: 0.25rem 0.75rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.25rem;
+  color: #fff;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.links-contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+@media (min-width: 640px) {
+  .links-contacts { flex-direction: row; gap: 3rem; }
+}
+.links-contact {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 170%;
+}
+@media (min-width: 1600px) { .links-contact { font-size: 20px; } }
+.links-contact-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: var(--accent);
+}
+
+/* ---- Sticky Download CV (desktop/tablet) ------------------- */
+.cv-sticky { display: none; }
+@media (min-width: 768px) {
+  .cv-sticky {
+    display: block;
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    z-index: 50;
+  }
+}
+@media (min-width: 1024px) {
+  .cv-sticky { right: 3rem; }
+}
+
+/* ---- Floating bottom nav ----------------------------------- */
+.bottom-nav {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 9999px;
+  padding: 0.375rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  z-index: 50;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+@media (min-width: 1024px) {
+  .bottom-nav { bottom: 2.5rem; }
+}
+.nav-link {
+  position: relative;
+  padding: 0.625rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: color 0.2s;
+  border-radius: 9999px;
+  color: #d4d4d4;
+}
+.nav-link:not(.active):hover { color: #fff; }
+.nav-link.active { color: #3E2B15; }
+.nav-icon {
+  width: 1rem;
+  height: 1rem;
+  position: relative;
+  z-index: 10;
+  color: #fff;
+}
+.nav-link.active .nav-icon { color: #3E2B15; }
+.nav-label {
+  display: none;
+  position: relative;
+  z-index: 10;
+}
+@media (min-width: 640px) {
+  .nav-label { display: inline; }
+}
+.nav-pill {
+  position: absolute;
+  inset: 0;
+  background: #fff;
+  border-radius: 9999px;
+  z-index: 0;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+/* ---- Helpers ----------------------------------------------- */
+.lg-text-left { }
+@media (min-width: 1024px) {
+  .lg-text-left { text-align: left; }
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ============================================================
+   Hero contacts grid (email / phone / linkedin / location)
+   Edit the numbers here — no Tailwind needed.
+   ============================================================ */
+
+/* MOBILE (default): single column, stacked */
+.contacts-grid {
+  display: grid;
+  grid-template-columns: 1fr;                 /* one column on mobile */
+  gap: clamp(0.75rem, 2.5vw, 1.25rem);        /* space between rows */
+  max-width: clamp(18rem, 80vw, 40rem);
+  font-size: clamp(14px, 4vw, 20px);
+  font-weight: 700;
+  margin-top: 60vh;                            /* keep contacts below the initial mobile viewport */
+}
+
+/* TABLET & DESKTOP (640px and up): two columns */
+@media (min-width: 640px) {
+  .contacts-grid {
+    grid-template-columns: 1fr 1fr;            /* two columns */
+    column-gap: clamp(1.5rem, 5vw, 3rem);      /* space between the two columns */
+    margin-top: 0;                             /* reset the mobile push-down */
+  }
+  .contact-item {
+    white-space: nowrap;                       /* prevent location from wrapping to two lines */
+  }
+}
+
+/* Each contact row (a or div) */
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.75rem, 2vw, 1rem);             /* space between icon and text */
+  color: #fff;
+  line-height: 170%;
+  transition: color 0.2s ease;
+}
+
+/* Hover only on the clickable links */
+a.contact-item:hover {
+  color: #FFB800;
+}
+
+/* The lucide icon inside each row */
+.contact-item svg {
+  flex-shrink: 0;
+  color: #FFB800;                              /* icon color */
+  width: clamp(1rem, 4vw, 1.5rem);
+  height: clamp(1rem, 4vw, 1.5rem);
+}

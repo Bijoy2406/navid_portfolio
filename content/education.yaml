@@ -1,8 +1,12 @@
 education:
-  - institution: Savannah College of Art and Design (SCAD)
-    degree: Bachelor of Fine Arts in User Experience Design
-    year: "2016"
+  - institution: North South University
+    degree: B.Sc in Computer Science & Engineering
+    year: "2022 — 2027"
+  - institution: Govt. Mohammadpur Model School & College
+    degree: HSC
+    year: "2021 — GPA - 5.00 (Science)"
+  - institution: Mohammadpur Govt. High School
+    degree: SSC
+    year: "2019 — GPA - 4.78 (Science)"  
 
-certificates:
-  - name: Google UX Design Certificate
-    date: August 2022
+

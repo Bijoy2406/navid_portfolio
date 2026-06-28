@@ -1,84 +1,83 @@
 jobs:
-  - title: UX/UI Designer
-    company: Creative Solutions Agency
-    period: "2021 – Present"
+  - title: Public Relations Office, North South University
+    company: Official Photographer & PR Content Producer
+    period: "2024 - Present"
     description: >
-      At Creative Solutions Agency, I lead design efforts on a range of high-profile
-      projects, focusing on enhancing user experience across multiple platforms, from
-      web to mobile applications. I collaborate closely with developers and stakeholders
-      to ensure that design solutions meet both user needs and business objectives.
-    bullets:
-      - Conducted user research and usability testing to drive design decisions
-      - Created wireframes, prototypes, and high-fidelity visual designs
-      - Developed and maintained design systems for consistent branding and user experience
-      - Worked cross-functionally with product managers and developers to ensure seamless implementation of designs
-      - Led the design of responsive interfaces that adapt to different screen sizes and devices
-      - Managed a small team of junior designers, providing mentorship and feedback
-      - Regularly presented design concepts and iterations to clients and stakeholders
-      - Stayed updated on industry trends to incorporate new design patterns and technologies
-    projects:
-      - title: Pixel Pathway
-        description: A dynamic UX/UI design journey
-        href: "#"
-        # URL or filename in public/assets/
-        image: https://framerusercontent.com/images/MkkkBPjnjBiJYQ7Y8vHigj6I.jpeg
-      - title: Flowstate
-        description: Seamless user experience design
-        href: "#"
-        image: https://framerusercontent.com/images/GuAok0jBiNWN6PM8hPvuqQPBuo.jpeg
-      - title: Nova
-        description: A bold branding and web project
-        href: "#"
-        image: https://framerusercontent.com/images/Afj2AxNgFo0T3qEzIdyZfjnj7o.jpeg
+      As the Official Photographer and PR Content Producer for NSU Digital, the official page of North South
+      University, I specialize in capturing, producing, and curating high-quality photo and video content from
+      various campus events. I handle media monitoring and work closely with journalists to ensure timely
+      coverage and accurate representation of the university’s activities across digital and traditional platforms.
+      Through this role, I have gained practical experience in photojournalism and contributed visual content for
+      news portals, covering meetings, corporate shoots, workshops, and special occasions to maintain and
+      promote a strong, professional image for the university’s community and audience.
 
-  - title: UX/UI Designer
-    company: Innovative Tech Solutions
-    period: "2018 – 2021"
+  - title: Snapshot Stories
+    company: Founder & Head of Operations
+    period: "2024 - Present"
     description: >
-      As a UX/UI Designer at Innovative Tech Solutions, I was responsible for designing
-      intuitive, user-centered interfaces for web and mobile applications. My role involved
-      collaborating with clients to understand their needs, conducting user testing, and
-      translating findings into actionable design improvements.
-    bullets:
-      - Led the design process from concept to completion for web and mobile applications
-      - Conducted user interviews and surveys to gather insights for user-centered design
-      - Built wireframes, user flows, and prototypes to visualize design concepts
-      - Coordinated with development teams to ensure design fidelity during implementation
-      - Created high-fidelity UI designs with attention to detail and consistency
-      - Participated in sprint meetings, contributing to product planning and prioritization
-      - Provided feedback on design work produced by junior designers
-      - Developed and maintained design systems for scalability and consistency
+      Snapshot Production and Snapshot Stories are professional photography and cinematography brands specializing in corporate shoots, fashion, branding, weddings, concerts, and events. As the Founder, Head of Operations and Chief Photographer, I lead creative direction, manage client projects, and provide direction to teams to ensure smooth production workflows. I deliver high-quality visual storytelling for brands and individuals, making sure every project captures unique stories with professional standards.
     projects:
-      - title: UX Horizon
-        description: Intuitive and forward-thinking design
-        href: "#"
-        image: https://framerusercontent.com/images/P7UnQ0qsmt55kr2jUL4oO09iis.jpeg
-      - title: ClearView
-        description: Simplifying workflows through design
-        href: "#"
-        image: https://framerusercontent.com/images/zc10Xs9y91cgxBaaVzcHecmn2uQ.jpeg
+      - title: behance portfolio
+        description: Click here to to visit.
+        href: "https://www.behance.net/tamzidnavid"
+        image: "behance"
 
-  - title: Junior UX/UI Designer
-    company: NextGen Digital
-    period: "2016 – 2018"
+      - title: NSU ACM SC Logo Animation
+        description: Behind the scenes of visual storytelling
+        href: "https://www.youtube.com/watch?v=Cx_Jd5rVOIY"
+        image:
+
+      - title: Mkt 202- Onyx Energy Drink Available in 4 Flavors
+        description: Showcasing diverse creative work
+        href: "https://www.youtube.com/watch?v=2QuOmFNv8A8"
+        image:
+
+      - title: Roman Sacrifice - NIDRA (Official Music Video)
+        description: Best moments from client projects
+        href: "https://www.youtube.com/watch?v=rl2RBzhgSsc"
+        image: 
+      - title: নর্থ সাউথ ইউনিভার্সিটিতে বাংলা নববর্ষ ১৪৩৩ উদযাপন
+        description: Curated highlights from recent work
+        href: "https://www.facebook.com/reel/1495923098853899"
+        image: "fb1.jpg"
+
+      - title: NSU ACM Student Chapter
+        description: Stories from the creative process
+        href: "https://www.facebook.com/reel/696975402946928"
+        image: "fb2.jpg"
+
+      - title: 𝗖𝗼𝗮𝘀𝘁𝗮𝗹 𝗨𝗹𝘁𝗿𝗮 𝗕𝗮𝗻𝗴𝗹𝗮𝗱𝗲𝘀𝗵
+        description: See what clients say about our work
+        href: "https://www.facebook.com/reel/876722401486961"
+        image: "fb3.jpg"
+
+  - title: NSU ACM Student Chapter
+    company: Founding Coordinator & Sub-Executive
+    period: "2024 - Present"
     description: >
-      At NextGen Digital, I supported senior designers in delivering design solutions for
-      a variety of digital products. I focused on producing prototypes, wireframes, and
-      visual assets while learning and growing in a fast-paced design environment.
-    bullets:
-      - Assisted in designing wireframes and prototypes for client projects
-      - Supported senior designers with visual design tasks and design documentation
-      - Participated in user research and testing to gather feedback for design improvements
-      - Helped create user personas, journey maps, and other user-centered design artifacts
-      - Produced final assets for handoff to development teams
-      - Ensured design consistency across different platforms and devices
-      - Worked closely with other team members to meet deadlines and deliverables
-    projects:
-      - title: Momentum
-        description: Driving user engagement through bold visuals
-        href: "#"
-        image: https://framerusercontent.com/images/PkBSut5mtqh56AvL2Vs4uYt3M.jpeg
-      - title: FrameWorks
-        description: Shining with a no-code Framer project
-        href: "#"
-        image: https://framerusercontent.com/images/hHC1wBOeEKOvLAdwRlmyUCNVYtw.jpeg
+      As the Founding Coordinator of the Media & Documentation and Sub-Executive of Team Promotions at NSU
+      ACM Student Chapter, I led initiatives in public relations, event documentation, and promotional content
+      creation. I played a key role in building the group from the ground up, coordinated media coverage,
+      sponsorship materials, and press releases to enhance the chapter's visibility. I progressed from probationary
+      member to leadership roles, and developed strong leadership, teamwork, and communication skills within a
+      dynamic student community.
+    
+  - title: English Olympiad
+    company: Campus Ambassador & Organizer
+    period: "2023 - 2025"
+    description: >
+      As an Organizer & Campus Ambassador, I played a pivotal role in the committee dedicated to the growth and
+      success of the English Olympiad. Through effective coordination, engagement, and event organization, I
+      contributed to its overall success and positive impact on campus. Additionally, I organized the event and
+      served as an adjudicator for the final round of Season 3.
+    
+  - title: National STEAM Olympiad
+    company: Campus Ambassador
+    period: "2023 - 2025"
+    description: >
+      Working as a Campus Ambassador for the National STEAM Olympiad, I represented the organization at my
+      university, promoted and organized events related to science, technology, engineering, arts, and
+      mathematics. I effectively communicated program details, engaged students, and helped facilitate a
+      meaningful educational experience for participants. It was a great success for me, and I was honored to be
+      selected as one of the top 30 nominee ambassadors among 1,300 others nationwide.
+    

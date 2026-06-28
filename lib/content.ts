@@ -47,6 +47,7 @@ export interface Experience {
 export interface Tool {
   name: string;
   image: string;
+  size?: number; // icon box size in px (default 64). Set per tool to enlarge/shrink.
 }
 
 export interface Skills {
@@ -79,12 +80,18 @@ export interface Education {
   certificates: Certificate[];
 }
 
+export interface Achievements {
+  achievements: string[];
+}
+
 export interface Socials {
-  linkedin: string;
-  dribbble: string;
-  twitter: string;
-  instagram: string;
-  behance: string;
+  linkedin?: string;
+  dribbble?: string;
+  twitter?: string;
+  instagram?: string;
+  behance?: string;
+  fb_personal?: string;
+  snapshot_fb?: string;
 }
 
 export interface Links {
@@ -100,17 +107,19 @@ export interface SiteContent {
   skills: Skills;
   languages: Languages;
   education: Education;
+  achievements: Achievements;
   links: Links;
 }
 
 export function loadContent(): SiteContent {
   return {
     hero: loadYaml<Hero>("hero.yaml"),
-    summary: loadYaml<Summary>("summary.yaml"),
+    summary: loadYaml<Summary>("about_me.yaml"),
     experience: loadYaml<Experience>("experience.yaml"),
     skills: loadYaml<Skills>("skills.yaml"),
     languages: loadYaml<Languages>("languages.yaml"),
     education: loadYaml<Education>("education.yaml"),
+    achievements: loadYaml<Achievements>("achievements.yaml"),
     links: loadYaml<Links>("links.yaml"),
   };
 }

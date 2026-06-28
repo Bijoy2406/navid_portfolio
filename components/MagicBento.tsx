@@ -5,6 +5,7 @@ import { gsap } from "gsap";
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { resolveImage } from "@/lib/resolve-image";
+import { extractVideoThumbnail } from "@/lib/extract-video-thumbnail";
 import { motion, AnimatePresence, useMotionValue, useSpring } from "motion/react";
 
 /* ─── constants ─────────────────────────────────────────────────── */
@@ -275,7 +276,7 @@ const GlobalSpotlight = ({ gridRef, disableAnimations = false, spotlightRadius =
 };
 
 /* ─── HoverCursor ────────────────────────────────────────────────── */
-function HoverCursor({ label, containerRef }: { label: string; containerRef: React.RefObject<HTMLDivElement | null> }) {
+function HoverCursor({ label, containerRef, mode = "label" }: { label: string; containerRef: React.RefObject<HTMLDivElement | null>; mode?: "label" | "arrow" }) {
   const [visible, setVisible] = useState(false);
   const mx = useMotionValue(0);
   const my = useMotionValue(0);
@@ -317,25 +318,31 @@ function HoverCursor({ label, containerRef }: { label: string; containerRef: Rea
             top: 0,
             x: sx,
             y: sy,
-            translateX: "-50%",
-            translateY: "-50%",
+            translateX: mode === "label" ? "-50%" : "0%",
+            translateY: mode === "label" ? "-50%" : "0%",
             pointerEvents: "none",
             zIndex: 50,
           }}
         >
-          <div style={{
-            background: "#FFB800",
-            color: "#1A1A1A",
-            fontWeight: 700,
-            fontSize: "0.75rem",
-            letterSpacing: "0.04em",
-            padding: "8px 16px",
-            borderRadius: 999,
-            whiteSpace: "nowrap",
-            boxShadow: "0 4px 16px rgba(255,184,0,0.35)",
-          }}>
-            {label}
-          </div>
+          {mode === "label" ? (
+            <div style={{
+              background: "#FFB800",
+              color: "#1A1A1A",
+              fontWeight: 700,
+              fontSize: "0.75rem",
+              letterSpacing: "0.04em",
+              padding: "8px 16px",
+              borderRadius: 999,
+              whiteSpace: "nowrap",
+              boxShadow: "0 4px 16px rgba(255,184,0,0.35)",
+            }}>
+              {label}
+            </div>
+          ) : (
+            <svg width="50" height="20" viewBox="0 0 26 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M2 2L24 14L14.5 16.5L9.5 28L2 2Z" fill="#FFB800"  strokeWidth="1.5" strokeLinejoin="round"/>
+            </svg>
+          )}
         </motion.div>
       )}
     </AnimatePresence>
@@ -356,6 +363,10 @@ interface BentoCardProps {
 
 function BentoCard({ project, spanTwo, disableAnimations, particleCount, glowColor, enableTilt, clickEffect, enableMagnetism }: BentoCardProps) {
   const imgRef = useRef<HTMLDivElement>(null);
+  const textRef = useRef<HTMLDivElement>(null);
+  const videoThumbnail = extractVideoThumbnail(project.href);
+  const imageUrl = project.image ? resolveImage(project.image) : (videoThumbnail || "");
+
   return (
     <ParticleCard
       className="mb-card"
@@ -373,16 +384,25 @@ function BentoCard({ project, spanTwo, disableAnimations, particleCount, glowCol
       enableMagnetism={enableMagnetism}
     >
       <div className="mb-border-glow" style={{ position: "absolute", inset: 0, borderRadius: "inherit", pointerEvents: "none", zIndex: 1 }} />
-      <a href={project.href} style={{ display: "block", height: "100%", textDecoration: "none" }}>
+      <a href={project.href} target="_blank" rel="noopener noreferrer" style={{ display: "block", height: "100%", textDecoration: "none" }}>
         <div
           ref={imgRef}
-          style={{ position: "relative", aspectRatio: spanTwo ? "16/7" : "4/3", overflow: "hidden", borderRadius: "16px 16px 0 0", cursor: "none" }}
+          data-custom-cursor
+          style={{ position: "relative", aspectRatio: spanTwo ? "16/7" : "4/3", overflow: "hidden", borderRadius: "16px 16px 0 0", cursor: "none", background: project.image === "behance" ? "bg-black" : undefined }}
+          className={project.image === "behance" ? "bg-black flex items-center justify-center" : ""}
         >
-          <Image src={resolveImage(project.image)} alt={project.title} fill className="object-cover" style={{ transition: "transform 0.7s ease" }} referrerPolicy="no-referrer" />
-          <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(13,13,13,0.8) 0%, transparent 55%)" }} />
-          <HoverCursor label="View Project" containerRef={imgRef} />
+          {project.image === "behance" ? (
+            <span className="text-white font-bold text-6xl tracking-tighter">Bē</span>
+          ) : (
+            <>
+              <Image src={imageUrl} alt={project.title} fill className="object-cover" style={{ transition: "transform 0.7s ease" }} referrerPolicy="no-referrer" />
+              <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(13,13,13,0.8) 0%, transparent 55%)" }} />
+            </>
+          )}
+          <HoverCursor label="View Project" containerRef={imgRef} mode="label" />
         </div>
-        <div style={{ padding: "14px 16px 16px" }}>
+        <div ref={textRef} data-custom-cursor style={{ padding: "14px 16px 16px", position: "relative", cursor: "none" }}>
+          <HoverCursor label="View Project" containerRef={textRef} mode="arrow" />
           <h5 style={{ fontWeight: 700, color: "#fff", fontSize: "1rem", marginBottom: 4, lineHeight: 1.3 }}>{project.title}</h5>
           <p style={{ color: "rgba(255,255,255,0.45)", fontSize: "0.8rem", lineHeight: 1.4, display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden" }}>{project.description}</p>
         </div>
@@ -416,7 +436,7 @@ export function MagicBentoGrid({
   const isTablet = useTablet();
   const isBento = !isMobile; // tablet + desktop both get bento
   const noAnim = isMobile;
-  const spanFirst = projects.length >= 3;
+  const spanFirst = projects && projects.length >= 3;
 
   // Tablet uses 2-col grid; desktop uses 3-col
   const cols = isTablet ? 2 : 3;
@@ -451,7 +471,11 @@ export function MagicBentoGrid({
       {/* Mobile: full-width stacked cards */}
       {isMobile && (
         <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
-          {projects.map((project, idx) => (
+          {projects.map((project, idx) => {
+            // Mirror BentoCard: fall back to a video thumbnail, treat "behance"
+            // as a text badge, and never pass an empty src to next/image.
+            const imageUrl = project.image ? resolveImage(project.image) : (extractVideoThumbnail(project.href) || "");
+            return (
             <a
               key={idx}
               href={project.href}
@@ -466,13 +490,21 @@ export function MagicBentoGrid({
             >
               {/* full-width image */}
               <div style={{ position: "relative", aspectRatio: "16/9", width: "100%" }}>
-                <Image
-                  src={resolveImage(project.image)}
-                  alt={project.title}
-                  fill
-                  className="object-cover"
-                  referrerPolicy="no-referrer"
-                />
+                {project.image === "behance" ? (
+                  <div style={{ position: "absolute", inset: 0, background: "#000", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                    <span className="text-white font-bold text-5xl tracking-tighter">Bē</span>
+                  </div>
+                ) : imageUrl ? (
+                  <Image
+                    src={imageUrl}
+                    alt={project.title}
+                    fill
+                    className="object-cover"
+                    referrerPolicy="no-referrer"
+                  />
+                ) : (
+                  <div style={{ position: "absolute", inset: 0, background: "#1a1a1a" }} />
+                )}
                 <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(13,13,13,0.6) 0%, transparent 50%)" }} />
                 <div style={{ position: "absolute", top: 12, right: 12 }}>
                   <ArrowUpRight style={{ width: 20, height: 20, color: "white", filter: "drop-shadow(0 1px 4px rgba(0,0,0,0.8))" }} />
@@ -484,7 +516,8 @@ export function MagicBentoGrid({
                 <p style={{ color: "rgba(255,255,255,0.45)", fontSize: "0.82rem", lineHeight: 1.5 }}>{project.description}</p>
               </div>
             </a>
-          ))}
+            );
+          })}
         </div>
       )}
 

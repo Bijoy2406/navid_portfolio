@@ -672,6 +672,7 @@
   display: none;
   position: relative;
   z-index: 10;
+  white-space: nowrap;
 }
 @media (min-width: 640px) {
   .nav-label { display: inline; }

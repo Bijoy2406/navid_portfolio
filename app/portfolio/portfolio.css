@@ -212,6 +212,9 @@
 .hero-inner {
   margin-top: 35vh;
 }
+@media (max-width: 767px) {
+  .hero-inner { transform: translateY(-4rem); }
+}
 @media (min-width: 768px) {
   .hero-inner { margin-top: 0; }
 }

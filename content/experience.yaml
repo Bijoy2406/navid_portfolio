@@ -17,7 +17,7 @@ jobs:
     description: >
       Snapshot Production and Snapshot Stories are professional photography and cinematography brands specializing in corporate shoots, fashion, branding, weddings, concerts, and events. As the Founder, Head of Operations and Chief Photographer, I lead creative direction, manage client projects, and provide direction to teams to ensure smooth production workflows. I deliver high-quality visual storytelling for brands and individuals, making sure every project captures unique stories with professional standards.
     projects:
-      - title: Behance portfolio
+      - title: Photography Portfolio 
         description: Click here to visit.
         href: "https://www.behance.net/tamzidnavid"
         image: "Behance.JPG"

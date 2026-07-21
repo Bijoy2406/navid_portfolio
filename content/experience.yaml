@@ -28,12 +28,12 @@ jobs:
         image:
 
       - title: Rafsan Sabab -Getting nostalgic on a “Marvel” ous show
-        description: Showcasing diverse creative work
+        description: Reels -Showcasing diverse creative work
         href: "https://www.facebook.com/reel/3016668995346732"
         image: "fb5.jpg"
 
       - title: Roman Sacrifice - NIDRA (Official Music Video)
-        description: Music Video
+        description: Official Music Video
         href: "https://www.youtube.com/watch?v=rl2RBzhgSsc"
         image: 
       - title: নর্থ সাউথ ইউনিভার্সিটিতে বাংলা নববর্ষ ১৪৩৩ উদযাপন
@@ -42,12 +42,12 @@ jobs:
         image: "ss.jpg"
 
       - title: NSU ACM Student Chapter
-        description: Stories from the creative process
+        description: Promo Video -Stories from the creative process
         href: "https://www.facebook.com/reel/696975402946928"
         image: "fb2.jpg"
 
       - title: 𝗖𝗼𝗮𝘀𝘁𝗮𝗹 𝗨𝗹𝘁𝗿𝗮 𝗕𝗮𝗻𝗴𝗹𝗮𝗱𝗲𝘀𝗵
-        description: Dhaka Stadium Run 2025
+        description: Event Trailer -Dhaka Stadium Run 2025
         href: "https://www.facebook.com/reel/876722401486961"
         image: "Coastal.jpg"
 

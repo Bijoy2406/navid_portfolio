@@ -20,7 +20,7 @@ jobs:
       - title: Behance portfolio
         description: Click here to visit.
         href: "https://www.behance.net/tamzidnavid"
-        image: "behance"
+        image: "Behance.JPG"
 
       - title: NSU ACM SC Logo Animation
         description: Behind the scenes of visual storytelling

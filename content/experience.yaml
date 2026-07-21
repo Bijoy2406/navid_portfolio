@@ -17,8 +17,8 @@ jobs:
     description: >
       Snapshot Production and Snapshot Stories are professional photography and cinematography brands specializing in corporate shoots, fashion, branding, weddings, concerts, and events. As the Founder, Head of Operations and Chief Photographer, I lead creative direction, manage client projects, and provide direction to teams to ensure smooth production workflows. I deliver high-quality visual storytelling for brands and individuals, making sure every project captures unique stories with professional standards.
     projects:
-      - title: behance portfolio
-        description: Click here to to visit.
+      - title: Behance portfolio
+        description: Click here to visit.
         href: "https://www.behance.net/tamzidnavid"
         image: "behance"
 
@@ -30,7 +30,7 @@ jobs:
       - title: Rafsan Sabab -Getting nostalgic on a “Marvel” ous show
         description: Showcasing diverse creative work
         href: "https://www.facebook.com/reel/3016668995346732"
-        image:
+        image: "fb4.jpg"
 
       - title: Roman Sacrifice - NIDRA (Official Music Video)
         description: Music Video

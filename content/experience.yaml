@@ -17,39 +17,39 @@ jobs:
     description: >
       Snapshot Production and Snapshot Stories are professional photography and cinematography brands specializing in corporate shoots, fashion, branding, weddings, concerts, and events. As the Founder, Head of Operations and Chief Photographer, I lead creative direction, manage client projects, and provide direction to teams to ensure smooth production workflows. I deliver high-quality visual storytelling for brands and individuals, making sure every project captures unique stories with professional standards.
     projects:
-      - title: behance portfolio
-        description: Click here to to visit.
+      - title: Photography Portfolio 
+        description: Click here to visit.
         href: "https://www.behance.net/tamzidnavid"
-        image: "behance"
+        image: "Behance.JPG"
 
-      - title: NSU ACM SC Logo Animation
-        description: Behind the scenes of visual storytelling
-        href: "https://www.youtube.com/watch?v=Cx_Jd5rVOIY"
-        image:
+      - title: BUETin Entrepreneurs Network 
+        description: Official Logo Animation 
+        href: "https://youtu.be/b2EhI_EDMbQ"
+        image: 
 
-      - title: Mkt 202- Onyx Energy Drink Available in 4 Flavors
-        description: Showcasing diverse creative work
-        href: "https://www.youtube.com/watch?v=2QuOmFNv8A8"
-        image:
+      - title: Rafsan Sabab -Getting nostalgic on a “Marvel” ous show
+        description: Reels -Showcasing diverse creative work
+        href: "https://www.facebook.com/reel/3016668995346732"
+        image: "fb5.jpg"
 
       - title: Roman Sacrifice - NIDRA (Official Music Video)
-        description: Best moments from client projects
+        description: Official Music Video
         href: "https://www.youtube.com/watch?v=rl2RBzhgSsc"
         image: 
       - title: নর্থ সাউথ ইউনিভার্সিটিতে বাংলা নববর্ষ ১৪৩৩ উদযাপন
-        description: Curated highlights from recent work
+        description: Public Relations Office (NSU Digital)
         href: "https://www.facebook.com/reel/1495923098853899"
-        image: "fb1.jpg"
+        image: "ss.jpg"
 
       - title: NSU ACM Student Chapter
-        description: Stories from the creative process
+        description: Promo Video -Stories from the creative process
         href: "https://www.facebook.com/reel/696975402946928"
         image: "fb2.jpg"
 
-      - title: 𝗖𝗼𝗮𝘀𝘁𝗮𝗹 𝗨𝗹𝘁𝗿𝗮 𝗕𝗮𝗻𝗴𝗹𝗮𝗱𝗲𝘀𝗵
-        description: See what clients say about our work
+      - title: Coastal Ultra Bangladesh
+        description: Event Trailer -Dhaka Stadium Run 2025
         href: "https://www.facebook.com/reel/876722401486961"
-        image: "fb3.jpg"
+        image: "Coastal.jpg"
 
   - title: NSU ACM Student Chapter
     company: Founding Coordinator & Sub-Executive

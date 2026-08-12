@@ -3,12 +3,15 @@ import { Albert_Sans } from 'next/font/google';
 import Script from "next/script";
 import './globals.css'; // Global styles
 import { Agentation } from "agentation";
+import { loadContent } from '@/lib/content';
 
 const albertSans = Albert_Sans({ subsets: ['latin'], variable: '--font-sans', weight: ['400', '600', '700', '800'] });
 
+const content = loadContent();
+
 export const metadata: Metadata = {
-  title: "Navid's Portfolio",
-  description: 'Portfolio of Navid, Photographer & Cinematographer based in Atlanta, US.',
+  title: `${content.hero.name}'s Portfolio`,
+  description: `Portfolio of ${content.hero.name}, ${content.hero.title} based in ${content.hero.location}.`,
 };
 
 export default function RootLayout({children}: {children: React.ReactNode}) {

@@ -28,9 +28,14 @@ jobs:
         image: 
 
       - title: Rafsan Sabab -Getting nostalgic on a “Marvel” ous show
-        description: Reels -Showcasing diverse creative work
+        description: Reels -Showcasing diverse creative work (820k views)
         href: "https://www.facebook.com/reel/3016668995346732"
         image: "fb5.jpg"
+
+      - title: Nafis Rafsan -Tawsif bhai got me dressed for a store opening
+        description: Reels -Social Media (2M views)
+        href: "https://www.facebook.com/reel/3025066621158619"
+        image: 
 
       - title: Roman Sacrifice - NIDRA (Official Music Video)
         description: Official Music Video

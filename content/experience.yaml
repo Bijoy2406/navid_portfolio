@@ -28,21 +28,26 @@ jobs:
         image: 
 
       - title: Rafsan Sabab -Getting nostalgic on a “Marvel” ous show
-        description: Reels -Showcasing diverse creative work (820k views)
+        description: Reels -Diverse creative work (1.2M+ views across social media)
         href: "https://www.facebook.com/reel/3016668995346732"
         image: "fb5.jpg"
 
       - title: Nafis Rafsan -Tawsif bhai got me dressed for a store opening
-        description: Reels -Social Media (2.4M views)
+        description: Reels -Social Media (6M views across social media)
         href: "https://www.facebook.com/reel/3025066621158619"
         image: "rafsan.jpg"
 
-      - title: Roman Sacrifice - NIDRA (Official Music Video)
-        description: Official Music Video (87k views)
+      - title: Nafis Rafsan -Tried destroying this laptop all day 
+        description:  Reels -Social Media (4.6M+ views across social media) 
+        href: "https://www.instagram.com/reel/DdjdRjsiVV7/"
+        image: 
+
+      - title: Roman Sacrifice -NIDRA (Official Music Video)
+        description: Music Video (87k views)
         href: "https://www.youtube.com/watch?v=rl2RBzhgSsc"
         image: 
       - title: নর্থ সাউথ ইউনিভার্সিটিতে বাংলা নববর্ষ ১৪৩৩ উদযাপন
-        description: Public Relations Office (NSU Digital-157k views)
+        description: Public Relations Office (NSU Digital Page -157k views)
         href: "https://www.facebook.com/reel/1260683589466235"
         image: "ss.jpg"
 
@@ -56,8 +61,8 @@ jobs:
         href: "https://www.facebook.com/reel/876722401486961"
         image: "Coastal.jpg"
         
-      - title: Kikkoman Soy Sauce 
-        description: Marketing Projects (1M+ views)
+      - title: Kikkoman Bangladesh 
+        description: Marketing Projects (2.1M+ views total)
         href: "https://www.instagram.com/reel/DcwA4pFKOQD/"
         image: "rees.jpg"
 

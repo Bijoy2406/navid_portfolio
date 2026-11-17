@@ -5,8 +5,8 @@
     "semantic_hash": ""
   },
   ".claude/settings.local.json": {
-    "mtime": 1782422981.8877437,
-    "ast_hash": "18de46486a719f06734af92ffd212c28",
+    "mtime": 1786525094.0703275,
+    "ast_hash": "89af766c10db4c8fe341f1ccbe14f59e",
     "semantic_hash": ""
   },
   ".eslintrc.json": {
@@ -15,8 +15,8 @@
     "semantic_hash": ""
   },
   ".impeccable/config.json": {
-    "mtime": 1782231444.0397236,
-    "ast_hash": "c0368bb17e4dce0307a67c8e13caa952",
+    "mtime": 1782660011.4685645,
+    "ast_hash": "793fb72449bc17c9614c7fdc6dfdb395",
     "semantic_hash": ""
   },
   ".impeccable/config.local.json": {
@@ -25,8 +25,8 @@
     "semantic_hash": ""
   },
   ".impeccable/hook.cache.json": {
-    "mtime": 1782649517.1258647,
-    "ast_hash": "1d30d77754e5d31b39d92c2e4d73a4f0",
+    "mtime": 1786525006.5807488,
+    "ast_hash": "71929071233fdd47bb1dfd7a3b4879f1",
     "semantic_hash": ""
   },
   ".impeccable/live/config.json": {
@@ -40,8 +40,8 @@
     "semantic_hash": ""
   },
   "app/layout.tsx": {
-    "mtime": 1782066374.6651278,
-    "ast_hash": "ccb66ae94ec5cc96aff715a6d2cc4f2d",
+    "mtime": 1794920845.2840023,
+    "ast_hash": "e5bff03c05b31dea4bedd200570966e4",
     "semantic_hash": ""
   },
   "app/page.tsx": {
@@ -50,8 +50,8 @@
     "semantic_hash": ""
   },
   "app/portfolio/PortfolioClient.tsx": {
-    "mtime": 1782649488.896452,
-    "ast_hash": "31f38424e4c6e3d31819595cc4559cab",
+    "mtime": 1794920195.5430484,
+    "ast_hash": "63cbf400de00df5dfb8b4a8bcc2b7c7a",
     "semantic_hash": ""
   },
   "components/BlurReveal.tsx": {
@@ -60,8 +60,8 @@
     "semantic_hash": ""
   },
   "components/LoadingScreen.tsx": {
-    "mtime": 1782376876.5550227,
-    "ast_hash": "873b98eddcb9f38682f964a719e90e5c",
+    "mtime": 1782660242.863751,
+    "ast_hash": "33f0d2c4b24f0915cf2adcfda7567163",
     "semantic_hash": ""
   },
   "components/MagicBento.tsx": {
@@ -95,8 +95,8 @@
     "semantic_hash": ""
   },
   "lib/content.ts": {
-    "mtime": 1782646230.3792348,
-    "ast_hash": "f846fea4702efd6cd36360d7d7e6ecb8",
+    "mtime": 1794920195.506049,
+    "ast_hash": "4831e99aa994eb517b8cc62e89f2ce78",
     "semantic_hash": ""
   },
   "lib/extract-video-thumbnail.ts": {
@@ -120,13 +120,13 @@
     "semantic_hash": ""
   },
   "next-env.d.ts": {
-    "mtime": 1781840016.0,
+    "mtime": 1794918712.340228,
     "ast_hash": "ba64ff7d54714a8f64db89b1003207d8",
     "semantic_hash": ""
   },
   "next.config.ts": {
-    "mtime": 1782048566.4338884,
-    "ast_hash": "a6c7aec2b0f232295fcbb4f8c06865b0",
+    "mtime": 1794918695.5328135,
+    "ast_hash": "42661219863c3353f3292bfb95c3800b",
     "semantic_hash": ""
   },
   "package.json": {
@@ -140,8 +140,8 @@
     "semantic_hash": ""
   },
   "tsconfig.json": {
-    "mtime": 1781840016.0,
-    "ast_hash": "3bef74470ac4e559ff92b6a6ce0d06e5",
+    "mtime": 1794918862.0264754,
+    "ast_hash": "27fd484a2c28d8e0998b7cdf69df006a",
     "semantic_hash": ""
   },
   ".claude/skills/memanto/SKILL.md": {
@@ -155,13 +155,13 @@
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1782128240.78424,
-    "ast_hash": "70866fd429aa109270fe62656c845df3",
+    "mtime": 1794920195.6060474,
+    "ast_hash": "88fa5cabf0d6ec6e16b693b50ebe647c",
     "semantic_hash": ""
   },
   "content/about_me.yaml": {
-    "mtime": 1782639460.1045845,
-    "ast_hash": "6a256c3114e7e2e0c78bf10b0c4ec37d",
+    "mtime": 1794918919.1425838,
+    "ast_hash": "705da891920b9f6b232d9a141f89ec08",
     "semantic_hash": ""
   },
   "content/achievements.yaml": {
@@ -170,18 +170,18 @@
     "semantic_hash": ""
   },
   "content/education.yaml": {
-    "mtime": 1782643717.510893,
-    "ast_hash": "a9cad65def009acf46870c219e5f2985",
+    "mtime": 1786525076.1951256,
+    "ast_hash": "6bc74fe5c20004a5fde2edad0ac8c748",
     "semantic_hash": ""
   },
   "content/experience.yaml": {
-    "mtime": 1782644964.5586207,
-    "ast_hash": "4980430df645ad2114e83248814dcc52",
+    "mtime": 1794918695.6058135,
+    "ast_hash": "740598eb4287e945c7b870fcfa2ef3c9",
     "semantic_hash": ""
   },
   "content/hero.yaml": {
-    "mtime": 1782639317.3540375,
-    "ast_hash": "8555bde76a7bbafaa6f66564179e8c87",
+    "mtime": 1794917871.2068067,
+    "ast_hash": "adbd80ba981ce270bb1d1b844e061120",
     "semantic_hash": ""
   },
   "content/languages.yaml": {
@@ -190,18 +190,13 @@
     "semantic_hash": ""
   },
   "content/links.yaml": {
-    "mtime": 1782644042.8037403,
-    "ast_hash": "f918d141bcea2a40abdf6c065778042a",
+    "mtime": 1782736827.0037425,
+    "ast_hash": "8700c844c35af07cb68ea086f2678518",
     "semantic_hash": ""
   },
   "content/skills.yaml": {
-    "mtime": 1782647218.2716851,
-    "ast_hash": "3d94be2b0be5e664de4b606930804bfb",
-    "semantic_hash": ""
-  },
-  "assets/.aistudio/portrait.jpg": {
-    "mtime": 1782064526.6759238,
-    "ast_hash": "cdffad420fd5ccb9a5b4877d33d63958",
+    "mtime": 1782736827.0040574,
+    "ast_hash": "172d37f6828316720ac0c9be16bab9da",
     "semantic_hash": ""
   },
   "public/assets/1.png": {
@@ -257,6 +252,111 @@
   "public/assets/stitch.svg": {
     "mtime": 1782646799.8524656,
     "ast_hash": "9c726609a2c989c6eb5054d7f8647a8b",
+    "semantic_hash": ""
+  },
+  "public/assets/8d078fae-439f-488a-8ad3-a8691ef25a4e.pdf": {
+    "mtime": 1782838541.9261599,
+    "ast_hash": "1e587291c25d6fd400acf8a5f5fadde9",
+    "semantic_hash": ""
+  },
+  "public/assets/doc.pdf": {
+    "mtime": 1783278396.1295433,
+    "ast_hash": "6dc75fd3af3c91d01f805261e03e13bc",
+    "semantic_hash": ""
+  },
+  "public/assets/11.PNG": {
+    "mtime": 1794917871.2207606,
+    "ast_hash": "1fff8bc0bd22617c6b338a9bf377688a",
+    "semantic_hash": ""
+  },
+  "public/assets/Behance.JPG": {
+    "mtime": 1786525076.196171,
+    "ast_hash": "428a825bb0c60f5733f931a8c3b4663f",
+    "semantic_hash": ""
+  },
+  "public/assets/Coastal.jpg": {
+    "mtime": 1786525076.1965373,
+    "ast_hash": "ff7cd2e5b33a8993e3153b257322385a",
+    "semantic_hash": ""
+  },
+  "public/assets/ban.png": {
+    "mtime": 1786525076.199029,
+    "ast_hash": "a2de5af235319b14beee933c57660de8",
+    "semantic_hash": ""
+  },
+  "public/assets/ban2.png": {
+    "mtime": 1786525076.2017252,
+    "ast_hash": "3b8654478e96b5c72af35988a10df5b2",
+    "semantic_hash": ""
+  },
+  "public/assets/desco.png": {
+    "mtime": 1782810499.2018137,
+    "ast_hash": "518e67254c3c97553492b06cc0440373",
+    "semantic_hash": ""
+  },
+  "public/assets/fb4.jpg": {
+    "mtime": 1786525076.204551,
+    "ast_hash": "856b32f23faa04fd44c398ebce9dea8e",
+    "semantic_hash": ""
+  },
+  "public/assets/fb5.jpg": {
+    "mtime": 1786525076.2059047,
+    "ast_hash": "9c088dbf187e11277508cf6b28305273",
+    "semantic_hash": ""
+  },
+  "public/assets/logo.JPG": {
+    "mtime": 1786525076.2060537,
+    "ast_hash": "0a886c0e1d28c6c71651557702e19c18",
+    "semantic_hash": ""
+  },
+  "public/assets/logo.PNG": {
+    "mtime": 1794917871.2260218,
+    "ast_hash": "abd2d6fc3e1c97a8b8f115a0b6b86321",
+    "semantic_hash": ""
+  },
+  "public/assets/nafis.jpg": {
+    "mtime": 1794917871.2265031,
+    "ast_hash": "ed2de1f29ae4487c6a6da83fa46a892e",
+    "semantic_hash": ""
+  },
+  "public/assets/p2a.jpg": {
+    "mtime": 1794917871.2274513,
+    "ast_hash": "4915123246dc5e3bde78166cd61058e4",
+    "semantic_hash": ""
+  },
+  "public/assets/rafsan.jpeg": {
+    "mtime": 1794917871.2293327,
+    "ast_hash": "f975181db4a76c66535e5e4280167e2f",
+    "semantic_hash": ""
+  },
+  "public/assets/rafsan.jpg": {
+    "mtime": 1794917871.2299047,
+    "ast_hash": "02ba5c22ff5328cb062aa7556eff1e2a",
+    "semantic_hash": ""
+  },
+  "public/assets/rees.jpg": {
+    "mtime": 1794917871.2301133,
+    "ast_hash": "3dcff5cdb7b1bcfbbe0a3e0100c2536e",
+    "semantic_hash": ""
+  },
+  "public/assets/samia.jpg": {
+    "mtime": 1794917871.2303612,
+    "ast_hash": "df5d405a63302ec811b0b744dd53d51e",
+    "semantic_hash": ""
+  },
+  "public/assets/samia2.jpg": {
+    "mtime": 1794917871.2303612,
+    "ast_hash": "2b9b9dc20c0725b8b00765a8e26000d1",
+    "semantic_hash": ""
+  },
+  "public/assets/ss.JPG": {
+    "mtime": 1786525076.206291,
+    "ast_hash": "a8562eee3d4021f8ec403f459aabdda0",
+    "semantic_hash": ""
+  },
+  "content/academic_projects.yaml": {
+    "mtime": 1794920195.4700496,
+    "ast_hash": "055ada97f700190b5586f348a9517cda",
     "semantic_hash": ""
   }
 }

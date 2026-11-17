@@ -1,16 +1,16 @@
-# Graph Report - tyrone-brooks-portfolio (1)  (2026-06-28)
+# Graph Report - tyrone-brooks-portfolio (1)  (2026-11-17)
 
 ## Corpus Check
-- 32 files · ~176,489 words
+- 32 files · ~484,021 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 201 nodes · 217 edges · 23 communities (16 shown, 7 thin omitted)
+- 205 nodes · 224 edges · 21 communities (15 shown, 6 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 1 edges (avg confidence: 0.5)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `2acc6c2a`
+- Built from commit: `66b2b7a0`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -22,9 +22,7 @@
 - [[_COMMUNITY_Community 4|Community 4]]
 - [[_COMMUNITY_Community 5|Community 5]]
 - [[_COMMUNITY_Community 6|Community 6]]
-- [[_COMMUNITY_Community 7|Community 7]]
 - [[_COMMUNITY_Community 8|Community 8]]
-- [[_COMMUNITY_Community 9|Community 9]]
 - [[_COMMUNITY_Community 10|Community 10]]
 - [[_COMMUNITY_Community 11|Community 11]]
 - [[_COMMUNITY_Community 14|Community 14]]
@@ -42,20 +40,20 @@
 3. `SiteContent` - 11 edges
 4. `MEMANTO Memory Skill` - 10 edges
 5. `scripts` - 6 edges
-6. `resolveImage()` - 5 edges
-7. `Patterns` - 5 edges
-8. `MEMANTO - Your Active Memory Companion` - 5 edges
-9. `Navid's Portfolio` - 5 edges
-10. `MagicBentoGrid()` - 4 edges
+6. `loadContent()` - 5 edges
+7. `resolveImage()` - 5 edges
+8. `Patterns` - 5 edges
+9. `MEMANTO - Your Active Memory Companion` - 5 edges
+10. `Navid's Portfolio` - 5 edges
 
 ## Surprising Connections (you probably didn't know these)
+- `Page()` --calls--> `loadContent()`  [EXTRACTED]
+  app/page.tsx → lib/content.ts
 - `PortfolioClient()` --calls--> `resolveImage()`  [EXTRACTED]
   app/portfolio/PortfolioClient.tsx → lib/resolve-image.ts
-- `BentoCard()` --calls--> `resolveImage()`  [EXTRACTED]
-  components/MagicBento.tsx → lib/resolve-image.ts
 - `PortfolioClient` ----> `SiteContent`  [EXTRACTED]
   app/portfolio/PortfolioClient.tsx → lib/content.ts
-- `RootLayout` ----> `nextConfig`  [INFERRED]
+- `RootLayout` ----> `nextConfig()`  [INFERRED]
   app/layout.tsx → next.config.ts
 - `PortfolioClient` ----> `BlurReveal`  [EXTRACTED]
   app/portfolio/PortfolioClient.tsx → components/BlurReveal.tsx
@@ -73,11 +71,11 @@
 - **loading_screen_cinema_aesthetic** — components/LoadingScreen.tsx:CinemaLoadingScreen, components/LoadingScreen.tsx:NetworkDecoration [INFERRED]
 - **header_navigation_system** — app/portfolio/PortfolioClient.tsx:PortfolioClient, components/PulsingDot.tsx:PulsingDot [INFERRED]
 
-## Communities (23 total, 7 thin omitted)
+## Communities (21 total, 6 thin omitted)
 
 ### Community 0 - "Community 0"
-Cohesion: 0.13
-Nodes (10): BentoCard(), BentoCardProps, BentoProject, MagicBentoGrid(), MagicBentoGridProps, ParticleCardProps, SpotlightProps, useMobile() (+2 more)
+Cohesion: 0.12
+Nodes (11): BentoCard(), BentoCardProps, BentoProject, MagicBentoGrid(), MagicBentoGridProps, ParticleCardProps, SpotlightProps, useMobile() (+3 more)
 
 ### Community 1 - "Community 1"
 Cohesion: 0.09
@@ -88,8 +86,8 @@ Cohesion: 0.10
 Nodes (20): compilerOptions, allowJs, baseUrl, esModuleInterop, incremental, isolatedModules, jsx, lib (+12 more)
 
 ### Community 3 - "Community 3"
-Cohesion: 0.18
-Nodes (19): Page(), Achievements, Certificate, Education, EducationEntry, Experience, Hero, Job (+11 more)
+Cohesion: 0.12
+Nodes (24): albertSans, content, metadata, Page(), AcademicProject, AcademicProjects, Achievements, Certificate (+16 more)
 
 ### Community 4 - "Community 4"
 Cohesion: 0.11
@@ -103,17 +101,13 @@ Nodes (14): devDependencies, eslint, eslint-config-next, firebase-tools, shadcn,
 Cohesion: 0.20
 Nodes (9): name, private, scripts, build, clean, dev, lint, start (+1 more)
 
-### Community 7 - "Community 7"
-Cohesion: 0.33
-Nodes (3): LoadingScreenProps, RINGS, WORDS
-
 ### Community 8 - "Community 8"
 Cohesion: 0.60
 Nodes (3): CursorFollow(), CursorFollowProps, useCursorPosition()
 
 ### Community 19 - "Community 19"
-Cohesion: 0.13
-Nodes (5): BlurReveal(), BlurRevealProps, resolveImage(), PortfolioClient(), ROTATING_ROLES
+Cohesion: 0.09
+Nodes (8): BlurReveal(), BlurRevealProps, LoadingScreenProps, RINGS, WORDS, PortfolioClient(), ROTATING_ROLES, shouldPlayLoaderThisSession()
 
 ### Community 20 - "Community 20"
 Cohesion: 0.13
@@ -128,23 +122,23 @@ Cohesion: 0.33
 Nodes (5): Customising content, Getting started, Navid's Portfolio, Project structure, Stack
 
 ## Knowledge Gaps
-- **111 isolated node(s):** `extends`, `albertSans`, `metadata`, `ROTATING_ROLES`, `BlurRevealProps` (+106 more)
+- **114 isolated node(s):** `extends`, `albertSans`, `content`, `metadata`, `ROTATING_ROLES` (+109 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **7 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **6 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `SiteContent` connect `Community 3` to `Community 1`, `Community 19`?**
-  _High betweenness centrality (0.079) - this node is a cross-community bridge._
+  _High betweenness centrality (0.084) - this node is a cross-community bridge._
 - **Why does `PortfolioClient` connect `Community 1` to `Community 3`?**
-  _High betweenness centrality (0.064) - this node is a cross-community bridge._
+  _High betweenness centrality (0.068) - this node is a cross-community bridge._
 - **Why does `dependencies` connect `Community 4` to `Community 6`?**
-  _High betweenness centrality (0.027) - this node is a cross-community bridge._
-- **What connects `extends`, `albertSans`, `metadata` to the rest of the system?**
-  _111 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _High betweenness centrality (0.026) - this node is a cross-community bridge._
+- **What connects `extends`, `albertSans`, `content` to the rest of the system?**
+  _114 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
-  _Cohesion score 0.1286549707602339 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.12380952380952381 - nodes in this community are weakly interconnected._
 - **Should `Community 1` be split into smaller, more focused modules?**
   _Cohesion score 0.09090909090909091 - nodes in this community are weakly interconnected._
 - **Should `Community 2` be split into smaller, more focused modules?**

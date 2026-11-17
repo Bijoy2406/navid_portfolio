@@ -12,6 +12,9 @@ const content = loadContent();
 export const metadata: Metadata = {
   title: `${content.hero.name}'s Portfolio`,
   description: `Portfolio of ${content.hero.name}, ${content.hero.title} based in ${content.hero.location}.`,
+  icons: {
+    icon: { url: '/assets/logo.PNG', type: 'image/png' },
+  },
 };
 
 export default function RootLayout({children}: {children: React.ReactNode}) {

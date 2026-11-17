@@ -33,6 +33,9 @@ npm run start   # serve production build
 npm run lint    # eslint
 ```
 
+Development uses `.next-dev/`; production builds and `npm run start` use `.next/`.
+This keeps production builds from overwriting a running dev server's output.
+
 ## Customising content
 
 All copy lives in [`/content`](content/) — edit the YAML files to update the site without touching any component code.
@@ -45,6 +48,7 @@ All copy lives in [`/content`](content/) — edit the YAML files to update the s
 | `education.yaml` | Education |
 | `skills.yaml` | Skills list |
 | `languages.yaml` | Languages |
+| `academic_projects.yaml` | Academic projects, descriptions, technologies, and optional project links |
 | `links.yaml` | Social links |
 
 Drop replacement images into [`/public/assets/`](public/assets/) and reference them by filename in `hero.yaml`.

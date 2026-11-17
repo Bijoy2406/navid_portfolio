@@ -1,0 +1,21 @@
+# Demo content — replace these entries with your own academic projects.
+# Add more items under projects to grow the section automatically.
+# Set href to a repository or live demo URL; leave it empty to hide the link.
+projects:
+  - title: Student Management System
+    description: >-
+      Demo project: a web application for managing student profiles, course
+      enrollment, and academic records. Replace this with your project details.
+    technologies:
+      - Java
+      - MySQL
+    href: ""
+
+  - title: Image Classification Experiment
+    description: >-
+      Demo project: a machine learning experiment that classifies images and
+      compares model performance. Replace this with your methods and results.
+    technologies:
+      - Python
+      - TensorFlow
+    href: ""

@@ -116,37 +116,47 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_layout",
-      "community": 9,
+      "community": 3,
       "norm_label": "layout.tsx"
     },
     {
       "label": "albertSans",
       "file_type": "code",
       "source_file": "app/layout.tsx",
-      "source_location": "L7",
+      "source_location": "L8",
       "_origin": "ast",
       "id": "app_layout_albertsans",
-      "community": 9,
+      "community": 3,
       "norm_label": "albertsans"
+    },
+    {
+      "label": "content",
+      "file_type": "code",
+      "source_file": "app/layout.tsx",
+      "source_location": "L10",
+      "_origin": "ast",
+      "id": "app_layout_content",
+      "community": 3,
+      "norm_label": "content"
     },
     {
       "label": "metadata",
       "file_type": "code",
       "source_file": "app/layout.tsx",
-      "source_location": "L9",
+      "source_location": "L12",
       "_origin": "ast",
       "id": "app_layout_metadata",
-      "community": 9,
+      "community": 3,
       "norm_label": "metadata"
     },
     {
       "label": "RootLayout()",
       "file_type": "code",
       "source_file": "app/layout.tsx",
-      "source_location": "L14",
+      "source_location": "L20",
       "_origin": "ast",
       "id": "app_layout_rootlayout",
-      "community": 9,
+      "community": 3,
       "norm_label": "rootlayout()"
     },
     {
@@ -180,10 +190,20 @@
       "norm_label": "portfolioclient.tsx"
     },
     {
+      "label": "shouldPlayLoaderThisSession()",
+      "file_type": "code",
+      "source_file": "app/portfolio/PortfolioClient.tsx",
+      "source_location": "L17",
+      "_origin": "ast",
+      "id": "portfolio_portfolioclient_shouldplayloaderthissession",
+      "community": 19,
+      "norm_label": "shouldplayloaderthissession()"
+    },
+    {
       "label": "GlobalCursor()",
       "file_type": "code",
       "source_file": "app/portfolio/PortfolioClient.tsx",
-      "source_location": "L15",
+      "source_location": "L27",
       "_origin": "ast",
       "id": "portfolio_portfolioclient_globalcursor",
       "community": 19,
@@ -193,7 +213,7 @@
       "label": "SocialLink()",
       "file_type": "code",
       "source_file": "app/portfolio/PortfolioClient.tsx",
-      "source_location": "L65",
+      "source_location": "L77",
       "_origin": "ast",
       "id": "portfolio_portfolioclient_sociallink",
       "community": 19,
@@ -203,7 +223,7 @@
       "label": "getActiveSection()",
       "file_type": "code",
       "source_file": "app/portfolio/PortfolioClient.tsx",
-      "source_location": "L89",
+      "source_location": "L101",
       "_origin": "ast",
       "id": "portfolio_portfolioclient_getactivesection",
       "community": 19,
@@ -213,7 +233,7 @@
       "label": "DownloadCVButton()",
       "file_type": "code",
       "source_file": "app/portfolio/PortfolioClient.tsx",
-      "source_location": "L101",
+      "source_location": "L113",
       "_origin": "ast",
       "id": "portfolio_portfolioclient_downloadcvbutton",
       "community": 19,
@@ -223,7 +243,7 @@
       "label": "LanguagesSection()",
       "file_type": "code",
       "source_file": "app/portfolio/PortfolioClient.tsx",
-      "source_location": "L186",
+      "source_location": "L198",
       "_origin": "ast",
       "id": "portfolio_portfolioclient_languagessection",
       "community": 19,
@@ -233,7 +253,7 @@
       "label": "AuroraGlow()",
       "file_type": "code",
       "source_file": "app/portfolio/PortfolioClient.tsx",
-      "source_location": "L289",
+      "source_location": "L301",
       "_origin": "ast",
       "id": "portfolio_portfolioclient_auroraglow",
       "community": 19,
@@ -243,7 +263,7 @@
       "label": "BlurRevealName()",
       "file_type": "code",
       "source_file": "app/portfolio/PortfolioClient.tsx",
-      "source_location": "L299",
+      "source_location": "L311",
       "_origin": "ast",
       "id": "portfolio_portfolioclient_blurrevealname",
       "community": 19,
@@ -253,7 +273,7 @@
       "label": "ROTATING_ROLES",
       "file_type": "code",
       "source_file": "app/portfolio/PortfolioClient.tsx",
-      "source_location": "L363",
+      "source_location": "L375",
       "_origin": "ast",
       "id": "portfolio_portfolioclient_rotating_roles",
       "community": 19,
@@ -263,7 +283,7 @@
       "label": "RotatingText()",
       "file_type": "code",
       "source_file": "app/portfolio/PortfolioClient.tsx",
-      "source_location": "L370",
+      "source_location": "L382",
       "_origin": "ast",
       "id": "portfolio_portfolioclient_rotatingtext",
       "community": 19,
@@ -273,7 +293,7 @@
       "label": "PortfolioClient()",
       "file_type": "code",
       "source_file": "app/portfolio/PortfolioClient.tsx",
-      "source_location": "L402",
+      "source_location": "L414",
       "_origin": "ast",
       "id": "portfolio_portfolioclient_portfolioclient",
       "community": 19,
@@ -316,7 +336,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_loadingscreen",
-      "community": 7,
+      "community": 19,
       "norm_label": "loadingscreen.tsx"
     },
     {
@@ -326,7 +346,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "components_loadingscreen_loadingscreenprops",
-      "community": 7,
+      "community": 19,
       "norm_label": "loadingscreenprops"
     },
     {
@@ -336,7 +356,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "components_loadingscreen_words",
-      "community": 7,
+      "community": 19,
       "norm_label": "words"
     },
     {
@@ -346,7 +366,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "components_loadingscreen_rings",
-      "community": 7,
+      "community": 19,
       "norm_label": "rings"
     },
     {
@@ -356,7 +376,7 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "components_loadingscreen_networkdecoration",
-      "community": 7,
+      "community": 19,
       "norm_label": "networkdecoration()"
     },
     {
@@ -366,7 +386,7 @@
       "source_location": "L76",
       "_origin": "ast",
       "id": "components_loadingscreen_cinemaloadingscreen",
-      "community": 7,
+      "community": 19,
       "norm_label": "cinemaloadingscreen()"
     },
     {
@@ -800,10 +820,30 @@
       "norm_label": "achievements"
     },
     {
-      "label": "Socials",
+      "label": "AcademicProject",
       "file_type": "code",
       "source_file": "lib/content.ts",
       "source_location": "L87",
+      "_origin": "ast",
+      "id": "lib_content_academicproject",
+      "community": 3,
+      "norm_label": "academicproject"
+    },
+    {
+      "label": "AcademicProjects",
+      "file_type": "code",
+      "source_file": "lib/content.ts",
+      "source_location": "L94",
+      "_origin": "ast",
+      "id": "lib_content_academicprojects",
+      "community": 3,
+      "norm_label": "academicprojects"
+    },
+    {
+      "label": "Socials",
+      "file_type": "code",
+      "source_file": "lib/content.ts",
+      "source_location": "L98",
       "_origin": "ast",
       "id": "lib_content_socials",
       "community": 3,
@@ -813,7 +853,7 @@
       "label": "Links",
       "file_type": "code",
       "source_file": "lib/content.ts",
-      "source_location": "L97",
+      "source_location": "L108",
       "_origin": "ast",
       "id": "lib_content_links",
       "community": 3,
@@ -823,7 +863,7 @@
       "label": "SiteContent",
       "file_type": "code",
       "source_file": "lib/content.ts",
-      "source_location": "L103",
+      "source_location": "L114",
       "_origin": "ast",
       "id": "lib_content_sitecontent",
       "community": 3,
@@ -833,7 +873,7 @@
       "label": "loadContent()",
       "file_type": "code",
       "source_file": "lib/content.ts",
-      "source_location": "L114",
+      "source_location": "L126",
       "_origin": "ast",
       "id": "lib_content_loadcontent",
       "community": 3,
@@ -876,7 +916,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "lib_resolve_image",
-      "community": 19,
+      "community": 0,
       "norm_label": "resolve-image.ts"
     },
     {
@@ -886,7 +926,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "lib_resolve_image_resolveimage",
-      "community": 19,
+      "community": 0,
       "norm_label": "resolveimage()"
     },
     {
@@ -930,14 +970,14 @@
       "norm_label": "next.config.ts"
     },
     {
-      "label": "nextConfig",
+      "label": "nextConfig()",
       "file_type": "code",
       "source_file": "next.config.ts",
-      "source_location": "L3",
+      "source_location": "L4",
       "_origin": "ast",
       "id": "next_config_nextconfig",
       "community": 1,
-      "norm_label": "nextconfig"
+      "norm_label": "nextconfig()"
     },
     {
       "label": "package.json",
@@ -1853,7 +1893,7 @@
       "label": "Customising content",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L36",
+      "source_location": "L39",
       "_origin": "ast",
       "id": "readme_customising_content",
       "community": 22,
@@ -1863,7 +1903,7 @@
       "label": "Project structure",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L52",
+      "source_location": "L56",
       "_origin": "ast",
       "id": "readme_project_structure",
       "community": 22,
@@ -2148,6 +2188,16 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/layout.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_layout",
+      "target": "app_layout_content"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/layout.tsx",
       "source_location": "L9",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -2163,6 +2213,28 @@
       "confidence_score": 1.0,
       "source": "app_layout",
       "target": "app_layout_rootlayout"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/layout.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_layout",
+      "target": "lib_content"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/layout.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_layout",
+      "target": "lib_content_loadcontent"
     },
     {
       "relation": "contains",
@@ -2374,9 +2446,9 @@
       "source_file": "app/portfolio/PortfolioClient.tsx",
       "source_location": "L15",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "portfolio_portfolioclient",
-      "target": "portfolio_portfolioclient_globalcursor",
-      "confidence_score": 1.0
+      "target": "portfolio_portfolioclient_globalcursor"
     },
     {
       "relation": "contains",
@@ -2422,11 +2494,32 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/portfolio/PortfolioClient.tsx",
+      "source_location": "L17",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "portfolio_portfolioclient",
+      "target": "portfolio_portfolioclient_shouldplayloaderthissession"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/portfolio/PortfolioClient.tsx",
       "source_location": "L65",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "portfolio_portfolioclient",
-      "target": "portfolio_portfolioclient_sociallink",
-      "confidence_score": 1.0
+      "target": "portfolio_portfolioclient_sociallink"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/portfolio/PortfolioClient.tsx",
+      "source_location": "L420",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "portfolio_portfolioclient_portfolioclient",
+      "target": "portfolio_portfolioclient_shouldplayloaderthissession"
     },
     {
       "relation": "calls",
@@ -2666,9 +2759,9 @@
       "source_file": "components/MagicBento.tsx",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_magicbento",
-      "target": "lib_extract_video_thumbnail",
-      "confidence_score": 1.0
+      "target": "lib_extract_video_thumbnail"
     },
     {
       "relation": "imports",
@@ -2677,9 +2770,9 @@
       "source_file": "components/MagicBento.tsx",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_magicbento",
-      "target": "lib_extract_video_thumbnail_extractvideothumbnail",
-      "confidence_score": 1.0
+      "target": "lib_extract_video_thumbnail_extractvideothumbnail"
     },
     {
       "relation": "imports_from",
@@ -2854,11 +2947,31 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "lib/content.ts",
+      "source_location": "L87",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "lib_content",
+      "target": "lib_content_academicproject"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/content.ts",
+      "source_location": "L94",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "lib_content",
+      "target": "lib_content_academicprojects"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/content.ts",
       "source_location": "L83",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_content",
-      "target": "lib_content_achievements",
-      "confidence_score": 1.0
+      "target": "lib_content_achievements"
     },
     {
       "relation": "contains",
@@ -3191,9 +3304,9 @@
       "source_file": "lib/extract-video-thumbnail.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_extract_video_thumbnail",
-      "target": "lib_extract_video_thumbnail_extractvideothumbnail",
-      "confidence_score": 1.0
+      "target": "lib_extract_video_thumbnail_extractvideothumbnail"
     },
     {
       "relation": "contains",
@@ -3201,9 +3314,9 @@
       "source_file": "lib/extract-video-thumbnail.ts",
       "source_location": "L32",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_extract_video_thumbnail",
-      "target": "lib_extract_video_thumbnail_extractvideotitle",
-      "confidence_score": 1.0
+      "target": "lib_extract_video_thumbnail_extractvideotitle"
     },
     {
       "relation": "contains",
@@ -3870,9 +3983,9 @@
       "source_file": ".claude/skills/memanto/SKILL.md",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "memanto_skill",
-      "target": "memanto_skill_memanto_memory_skill",
-      "confidence_score": 1.0
+      "target": "memanto_skill_memanto_memory_skill"
     },
     {
       "relation": "contains",
@@ -3880,9 +3993,9 @@
       "source_file": ".claude/skills/memanto/SKILL.md",
       "source_location": "L133",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "memanto_skill_memanto_memory_skill",
-      "target": "memanto_skill_command_reference",
-      "confidence_score": 1.0
+      "target": "memanto_skill_command_reference"
     },
     {
       "relation": "contains",
@@ -3890,9 +4003,9 @@
       "source_file": ".claude/skills/memanto/SKILL.md",
       "source_location": "L28",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "memanto_skill_memanto_memory_skill",
-      "target": "memanto_skill_confidence_levels",
-      "confidence_score": 1.0
+      "target": "memanto_skill_confidence_levels"
     },
     {
       "relation": "contains",
@@ -3900,9 +4013,9 @@
       "source_file": ".claude/skills/memanto/SKILL.md",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "memanto_skill_memanto_memory_skill",
-      "target": "memanto_skill_memory_types_decision_matrix",
-      "confidence_score": 1.0
+      "target": "memanto_skill_memory_types_decision_matrix"
     },
     {
       "relation": "contains",
@@ -3910,9 +4023,9 @@
       "source_file": ".claude/skills/memanto/SKILL.md",
       "source_location": "L67",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "memanto_skill_memanto_memory_skill",
-      "target": "memanto_skill_patterns",
-      "confidence_score": 1.0
+      "target": "memanto_skill_patterns"
     },
     {
       "relation": "contains",
@@ -3920,9 +4033,9 @@
       "source_file": ".claude/skills/memanto/SKILL.md",
       "source_location": "L112",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "memanto_skill_memanto_memory_skill",
-      "target": "memanto_skill_pitfalls_to_avoid",
-      "confidence_score": 1.0
+      "target": "memanto_skill_pitfalls_to_avoid"
     },
     {
       "relation": "contains",
@@ -3930,9 +4043,9 @@
       "source_file": ".claude/skills/memanto/SKILL.md",
       "source_location": "L37",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "memanto_skill_memanto_memory_skill",
-      "target": "memanto_skill_provenance_types",
-      "confidence_score": 1.0
+      "target": "memanto_skill_provenance_types"
     },
     {
       "relation": "contains",
@@ -3940,9 +4053,9 @@
       "source_file": ".claude/skills/memanto/SKILL.md",
       "source_location": "L120",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "memanto_skill_memanto_memory_skill",
-      "target": "memanto_skill_recall_vs_answer_choose_the_right_tool",
-      "confidence_score": 1.0
+      "target": "memanto_skill_recall_vs_answer_choose_the_right_tool"
     },
     {
       "relation": "contains",
@@ -3950,9 +4063,9 @@
       "source_file": ".claude/skills/memanto/SKILL.md",
       "source_location": "L47",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "memanto_skill_memanto_memory_skill",
-      "target": "memanto_skill_source_types",
-      "confidence_score": 1.0
+      "target": "memanto_skill_source_types"
     },
     {
       "relation": "contains",
@@ -3960,9 +4073,9 @@
       "source_file": ".claude/skills/memanto/SKILL.md",
       "source_location": "L53",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "memanto_skill_memanto_memory_skill",
-      "target": "memanto_skill_tagging_best_practices",
-      "confidence_score": 1.0
+      "target": "memanto_skill_tagging_best_practices"
     },
     {
       "relation": "contains",
@@ -3970,9 +4083,9 @@
       "source_file": ".claude/skills/memanto/SKILL.md",
       "source_location": "L78",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "memanto_skill_patterns",
-      "target": "memanto_skill_after_important_work",
-      "confidence_score": 1.0
+      "target": "memanto_skill_after_important_work"
     },
     {
       "relation": "contains",
@@ -3980,9 +4093,9 @@
       "source_file": ".claude/skills/memanto/SKILL.md",
       "source_location": "L89",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "memanto_skill_patterns",
-      "target": "memanto_skill_choosing_between_recall_and_answer",
-      "confidence_score": 1.0
+      "target": "memanto_skill_choosing_between_recall_and_answer"
     },
     {
       "relation": "contains",
@@ -3990,9 +4103,9 @@
       "source_file": ".claude/skills/memanto/SKILL.md",
       "source_location": "L69",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "memanto_skill_patterns",
-      "target": "memanto_skill_session_start",
-      "confidence_score": 1.0
+      "target": "memanto_skill_session_start"
     },
     {
       "relation": "contains",
@@ -4000,9 +4113,9 @@
       "source_file": ".claude/skills/memanto/SKILL.md",
       "source_location": "L84",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "memanto_skill_patterns",
-      "target": "memanto_skill_when_user_corrects_you",
-      "confidence_score": 1.0
+      "target": "memanto_skill_when_user_corrects_you"
     },
     {
       "relation": "contains",
@@ -4010,9 +4123,9 @@
       "source_file": "CLAUDE.md",
       "source_location": "L96",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "claude",
-      "target": "claude_graphify",
-      "confidence_score": 1.0
+      "target": "claude_graphify"
     },
     {
       "relation": "contains",
@@ -4020,9 +4133,9 @@
       "source_file": "CLAUDE.md",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "claude",
-      "target": "claude_memanto_your_active_memory_companion",
-      "confidence_score": 1.0
+      "target": "claude_memanto_your_active_memory_companion"
     },
     {
       "relation": "contains",
@@ -4030,9 +4143,9 @@
       "source_file": "CLAUDE.md",
       "source_location": "L63",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "claude_memanto_your_active_memory_companion",
-      "target": "claude_command_reference",
-      "confidence_score": 1.0
+      "target": "claude_command_reference"
     },
     {
       "relation": "contains",
@@ -4040,9 +4153,9 @@
       "source_file": "CLAUDE.md",
       "source_location": "L36",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "claude_memanto_your_active_memory_companion",
-      "target": "claude_memory_operations_use_the_right_one",
-      "confidence_score": 1.0
+      "target": "claude_memory_operations_use_the_right_one"
     },
     {
       "relation": "contains",
@@ -4050,9 +4163,9 @@
       "source_file": "CLAUDE.md",
       "source_location": "L15",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "claude_memanto_your_active_memory_companion",
-      "target": "claude_non_negotiable_rules",
-      "confidence_score": 1.0
+      "target": "claude_non_negotiable_rules"
     },
     {
       "relation": "contains",
@@ -4060,9 +4173,9 @@
       "source_file": "CLAUDE.md",
       "source_location": "L52",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "claude_memanto_your_active_memory_companion",
-      "target": "claude_when_to_call_remember_examples_run_immediately",
-      "confidence_score": 1.0
+      "target": "claude_when_to_call_remember_examples_run_immediately"
     },
     {
       "relation": "contains",
@@ -4070,9 +4183,9 @@
       "source_file": "README.md",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "readme",
-      "target": "readme_navid_s_portfolio",
-      "confidence_score": 1.0
+      "target": "readme_navid_s_portfolio"
     },
     {
       "relation": "contains",
@@ -4080,9 +4193,9 @@
       "source_file": "README.md",
       "source_location": "L36",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "readme_navid_s_portfolio",
-      "target": "readme_customising_content",
-      "confidence_score": 1.0
+      "target": "readme_customising_content"
     },
     {
       "relation": "contains",
@@ -4090,9 +4203,9 @@
       "source_file": "README.md",
       "source_location": "L14",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "readme_navid_s_portfolio",
-      "target": "readme_getting_started",
-      "confidence_score": 1.0
+      "target": "readme_getting_started"
     },
     {
       "relation": "contains",
@@ -4100,9 +4213,9 @@
       "source_file": "README.md",
       "source_location": "L52",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "readme_navid_s_portfolio",
-      "target": "readme_project_structure",
-      "confidence_score": 1.0
+      "target": "readme_project_structure"
     },
     {
       "relation": "contains",
@@ -4110,9 +4223,9 @@
       "source_file": "README.md",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "readme_navid_s_portfolio",
-      "target": "readme_stack",
-      "confidence_score": 1.0
+      "target": "readme_stack"
     },
     {
       "relationship": "calls",
@@ -4371,5 +4484,5 @@
       "description": "Header with PulsingDot status indicator and floating bottom navigation pill with smooth layout animation and section highlighting"
     }
   ],
-  "built_at_commit": "2acc6c2a1d5e32efb5ebc62a8773e29baaecacce"
+  "built_at_commit": "66b2b7a0a9c84a93440db1bca1992fd56f283d64"
 }

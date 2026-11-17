@@ -42,8 +42,18 @@
   object-fit: cover;
   object-position: 48% 31%;
 }
+
+
 @media (min-width: 768px) {
   .bg-image { object-position: 38% 31%; }
+}
+@media (min-width: 1024px) and (min-aspect-ratio: 7/5) {
+  .bg-image-wrap {
+    /* Preserve the narrower desktop crop instead of enlarging it on wide screens. */
+    left: auto;
+    width: 140vh;
+    mask-image: linear-gradient(to right, transparent, #000 15%);
+  }
 }
 
 /* Animated blur overlay — dynamic blur/bg stay inline in JSX */
@@ -544,6 +554,42 @@
   flex-shrink: 0;
 }
 
+/* ---- Academic projects ------------------------------------- */
+.academic-projects {
+  display: grid;
+  gap: 3rem;
+  max-width: 48rem;
+}
+.academic-project-title {
+  color: var(--accent);
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 130%;
+  margin-bottom: 1rem;
+}
+.academic-project-description {
+  color: #fff;
+  font-size: 16px;
+  line-height: 170%;
+}
+@media (min-width: 1600px) {
+  .academic-project-description { font-size: 18px; }
+}
+.academic-project-technologies {
+  color: var(--accent);
+  font-size: 0.875rem;
+  line-height: 170%;
+  margin-top: 1rem;
+}
+.academic-project-link {
+  display: inline-block;
+  color: #fff;
+  margin-top: 1rem;
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+}
+.academic-project-link:hover { color: var(--accent); }
+
 /* ---- Links / socials --------------------------------------- */
 .social-row {
   display: flex;
@@ -651,7 +697,7 @@
 }
 .nav-link {
   position: relative;
-  padding: 0.625rem 1.25rem;
+  padding: 0.625rem 0.75rem;
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -677,7 +723,8 @@
   z-index: 10;
   white-space: nowrap;
 }
-@media (min-width: 640px) {
+@media (min-width: 900px) {
+  .nav-link { padding: 0.625rem 1.25rem; }
   .nav-label { display: inline; }
 }
 .nav-pill {

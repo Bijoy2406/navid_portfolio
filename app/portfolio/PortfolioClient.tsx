@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Mail, Phone, MapPin, Linkedin, User, Briefcase, FileText, Zap, Link as LinkIcon, Instagram, Trophy } from "lucide-react";
+import { Mail, Phone, MapPin, Linkedin, User, Briefcase, FileText, Zap, Link as LinkIcon, Instagram, Trophy, FolderCode } from "lucide-react";
 import { MagicBentoGrid } from "@/components/MagicBento";
 import { motion, AnimatePresence } from "motion/react";
 import { useState, useEffect, useRef, useCallback } from "react";
@@ -99,7 +99,7 @@ function SocialLink({ href, label, children, background, border }: { href: strin
 }
 
 function getActiveSection() {
-  const sections = ["home", "summary", "experience", "skills", "achievements", "links"];
+  const sections = ["home", "summary", "experience", "skills", "achievements", "projects", "links"];
   if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 50) return "links";
   for (let i = sections.length - 1; i >= 0; i--) {
     const section = document.getElementById(sections[i]);
@@ -412,7 +412,7 @@ function RotatingText({ texts, rotationInterval = 2500 }: { texts: string[]; rot
 }
 
 export default function PortfolioClient({ content }: { content: SiteContent }) {
-  const { hero, summary, experience, skills, languages, education, achievements, links } = content;
+  const { hero, summary, experience, skills, languages, education, achievements, academicProjects, links } = content;
 
   const [showLoader, setShowLoader] = useState(shouldPlayLoaderThisSession);
   const loaderCompleteRef = useRef(false);
@@ -487,9 +487,7 @@ export default function PortfolioClient({ content }: { content: SiteContent }) {
     // matching the original `threshold: 0.5` design intent.
     //
     // Blur ON  : trigger line is at/past the Summary marker (#marker-section-2)
-    // Blur OFF : Links section top enters the viewport
-    //            — desktop/tablet only; on mobile there is no upper bound so
-    //            content stays blurred to the end (per design spec).
+    // Blur OFF : Links section enters the viewport, after Academic Project.
     const computeState = () => {
       if (!isScrollingToSection.current) setActiveSection(getActiveSection());
 
@@ -562,6 +560,7 @@ export default function PortfolioClient({ content }: { content: SiteContent }) {
               src={resolveImage(hero.background_image)}
               alt="Background Texture"
               fill
+              sizes="(min-width: 1024px) and (min-aspect-ratio: 7/5) 140vh, 100vw"
               priority
               className="bg-image"
               referrerPolicy="no-referrer"
@@ -659,12 +658,9 @@ export default function PortfolioClient({ content }: { content: SiteContent }) {
             </motion.h2>
 
             <div className="about-body">
-              {summary.paragraphs[0] && (
-                <BlurReveal delay={0}>{summary.paragraphs[0]}</BlurReveal>
-              )}
-              {summary.paragraphs[1] && (
-                <BlurReveal delay={0}>{summary.paragraphs[1]}</BlurReveal>
-              )}
+              {summary.paragraphs.slice(0, 2).map((paragraph, index) => (
+                <BlurReveal key={index} delay={0}>{paragraph}</BlurReveal>
+              ))}
 
               <motion.blockquote
                 initial={{ opacity: 0, x: -20 }}
@@ -675,9 +671,9 @@ export default function PortfolioClient({ content }: { content: SiteContent }) {
                 <BlurReveal as="span" delay={0.1} stagger={0.04}>{summary.blockquote}</BlurReveal>
               </motion.blockquote>
 
-              {summary.paragraphs[2] && (
-                <BlurReveal delay={0}>{summary.paragraphs[2]}</BlurReveal>
-              )}
+              {summary.paragraphs.slice(2).map((paragraph, index) => (
+                <BlurReveal key={index} delay={0}>{paragraph}</BlurReveal>
+              ))}
             </div>
           </section>
 
@@ -866,6 +862,35 @@ export default function PortfolioClient({ content }: { content: SiteContent }) {
             </ul>
           </section>
 
+          {/* Academic Project */}
+          <section className="section" id="projects">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              className="section-title"
+            >
+              Academic Project
+            </motion.h2>
+
+            <div className="academic-projects">
+              {academicProjects.projects.map((project, idx) => (
+                <article key={idx} className="academic-project">
+                  <BlurReveal as="h3" className="academic-project-title">{project.title}</BlurReveal>
+                  <BlurReveal className="academic-project-description">{project.description}</BlurReveal>
+                  {!!project.technologies?.length && (
+                    <p className="academic-project-technologies">{project.technologies.join(" · ")}</p>
+                  )}
+                  {project.href && (
+                    <a className="academic-project-link" href={project.href} target="_blank" rel="noopener noreferrer" aria-label={`View project: ${project.title}`}>
+                      View project <span aria-hidden="true">↗</span>
+                    </a>
+                  )}
+                </article>
+              ))}
+            </div>
+          </section>
+
           {/* Links */}
           <section className="section" id="links">
             <div id="marker-section-5" style={{ position: "absolute", top: 0, left: 0, width: 100, height: 100, opacity: 0, pointerEvents: "none", overflow: "hidden" }} />
@@ -936,6 +961,7 @@ export default function PortfolioClient({ content }: { content: SiteContent }) {
             { id: "experience", label: "Experience", icon: FileText },
             { id: "skills", label: "Skills", icon: Zap },
             { id: "achievements", label: "Awards", icon: Trophy },
+            { id: "projects", label: "Project", icon: FolderCode },
             { id: "links", label: "Links", icon: LinkIcon }
           ].map((item) => {
             const isActive = activeSection === item.id;
@@ -944,6 +970,8 @@ export default function PortfolioClient({ content }: { content: SiteContent }) {
               <a
                 key={item.id}
                 href={`#${item.id}`}
+                aria-label={item.label}
+                aria-current={isActive ? "location" : undefined}
                 onClick={() => {
                   if (scrollLockRef.current) clearTimeout(scrollLockRef.current);
                   isScrollingToSection.current = true;

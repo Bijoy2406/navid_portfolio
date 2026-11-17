@@ -84,6 +84,17 @@ export interface Achievements {
   achievements: string[];
 }
 
+export interface AcademicProject {
+  title: string;
+  description: string;
+  technologies?: string[];
+  href?: string;
+}
+
+export interface AcademicProjects {
+  projects: AcademicProject[];
+}
+
 export interface Socials {
   linkedin?: string;
   dribbble?: string;
@@ -108,6 +119,7 @@ export interface SiteContent {
   languages: Languages;
   education: Education;
   achievements: Achievements;
+  academicProjects: AcademicProjects;
   links: Links;
 }
 
@@ -120,6 +132,7 @@ export function loadContent(): SiteContent {
     languages: loadYaml<Languages>("languages.yaml"),
     education: loadYaml<Education>("education.yaml"),
     achievements: loadYaml<Achievements>("achievements.yaml"),
+    academicProjects: loadYaml<AcademicProjects>("academic_projects.yaml"),
     links: loadYaml<Links>("links.yaml"),
   };
 }

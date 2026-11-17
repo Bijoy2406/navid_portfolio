@@ -8,16 +8,26 @@ projects:
     description: >-
       Compared core features, user journeys, pricing approaches, and service models across three ride-sharing platforms.
       Identified user pain points and product improvement opportunities through competitive analysis.
-    technologies:
-      - Java
-      - MySQL
+    
     href: ""
 
-  - title: Image Classification Experiment
+  - title: "FoodPilot AI — AI-Powered Food Management Platform | Product Development"
     description: >-
-      Demo project: a machine learning experiment that classifies images and
-      compares model performance. Replace this with your methods and results.
-    technologies:
-      - Python
-      - TensorFlow
+    Designed a multi-role platform for administrators and workers/managers with AI-assisted food management workflows.
+    Identified user needs and translated them into role-specific features, workflows, and AI-supported product functionality.
+
     href: ""
+
+    - title: "Case Study on Digital SAT Program for Phoenix Education | Business Analysis"
+    description: >-
+    Analyzed programme structure, student learning needs, and potential improvement opportunities to develop actionable insights and recommendations.
+
+    href: ""
+
+    - title: "Nasa Space Apps Challenge 2023 | UI/UX"
+    description: >-
+    Worked as a UI/UX Designer in the Interstellar sub-team of NSU Inception, contributing to the NASA Space Apps Challenge 2023. 
+    Gained hands-on experience in critical analysis, collaborative problem-solving, and design thinking within a competitive, fast-paced environment.
+
+    href: ""
+
